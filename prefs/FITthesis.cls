@@ -355,7 +355,7 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 \DeclareRobustCommand{\titlepage}{
         \begin{titlingpage}
         \noindent
-        \if\@lang1{\includegraphics[width=0.5\textwidth]{cvut-logo-bw}}\else\if\@lang2{\includegraphics[width=0.5\textwidth]{cvut-logo-bw}}\else{\includegraphics[width=0.5\textwidth]{cvut-logo-bw-en}}\fi\fi
+        \if\@lang1{\includegraphics[width=0.5\textwidth]{prefs/cvut-logo-bw}}\else\if\@lang2{\includegraphics[width=0.5\textwidth]{prefs/cvut-logo-bw}}\else{\includegraphics[width=0.5\textwidth]{prefs/cvut-logo-bw-en}}\fi\fi
         
         \vfill
 		
@@ -525,7 +525,7 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 	\thispagestyle{empty}
 % 	\if\@lang1{Sem vlo{\v z}te zad{\' a}n{\' i} Va{\v s}{\' i} pr{\' a}ce.}\else\if\@lang2{Sem vlo{\v z}te zadanie Va{\v s}ej pr{\' a}ce.}\else{Insert here your thesis' task.}\fi\fi
 	\frontmatter
-    \includepdf[pages={1}]{thesis-assignment.pdf}
+    \includepdf[pages={1}]{resources/thesis_assignment.pdf}
 	\pagestyle{plain}
 	\cleardoublepage
 % 	\setcounter{page}{3}

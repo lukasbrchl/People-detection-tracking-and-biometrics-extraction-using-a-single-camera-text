@@ -57,10 +57,10 @@ usage}
 \supervisor{doc. RNDr. Ing. Marcel Jiřina, Ph.D.}
 \acknowledgements{}
 \abstractCS{}
-\abstractEN{}
+\abstractEN{This thesis aims to design and implement a framework that analyzes video sequences to extract as much information as possible about the people in the scene captured by a single RGB camera. The whole framework can be broken down into the smaller components, i.e. people detector, people tracker. and biometrics extractor. The people detector employs a well-known deep-learning architecture to estimate bounding boxes of individuals. The tracking solution is built to be robust regarding the crowded scenes by incorporating multiple features in matching phase such as person's visual appearance, motion, face, and height. Each new detection has these features calculated by various computer vision algorithms and then these hypotheses are matched against existing tracks utilizing multiple distance metrics. Apart from using the features only for matching, they are kept for calculation of various output statistics. The approach is validated against the dataset which was created for this propose. The integration of face information in matching phase greatly improves the performance, however it is not always possible to extract it. This face information also helps to maintain a person identity even when when they leave the scene and then reappears. At the end, it is shown what the output statistics can be used for.}
 \placeForDeclarationOfAuthenticity{} %where you have signed the declaration
-\keywordsCS{}
-\keywordsEN{.}
+\keywordsCS{počítačové vidění, detekce osob, sledování osob, extrakce biometrických údajů}
+\keywordsEN{computer vision, people detection, people tracking, biometrics extraction}
 \declarationOfAuthenticityOption{5} %select as appropriate, according to the desired license
 \website{https://github.com/lukasbrchl/People-detection-tracking-and-biometrics-extraction-using-a-single-camera-text} %optional URL (remove entirely if you have no URL for this thesis)
 
