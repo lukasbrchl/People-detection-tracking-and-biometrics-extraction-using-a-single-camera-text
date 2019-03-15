@@ -38,8 +38,8 @@
 
 
 % list of acronyms
-% \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel,nomain]{glossaries}
-\iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
+\usepackage[acronym,nonumberlist,toc,numberedsection=autolabel,nomain]{glossaries}
+% \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
 % \makeglossaries
 
 \newcommand{\tg}{\mathop{\mathrm{tg}}} %cesky tangens
@@ -66,24 +66,26 @@ usage}
 
 \begin{document}
 
-% \newacronym{LZW}{LZW}{Lempel Ziv Welch}
-% \newacronym{RLE}{RLE}{Run-Length Encoding}
+\input{src_text/00_introduction.tex}
+\input{src_text/01_existing_methods.tex}
+\input{src_text/02_analysis.tex}
+\input{src_text/03_design.tex}
+\input{src_text/04_implementation.tex}
+\input{src_text/05_evaluation.tex}
+\input{src_text/06_conclusion.tex}
 
-
-
+% bibliography
 \bibliographystyle{prefs/iso690}
 \bibliography{ref}
 
 \appendix
 
-\chapter{List of Acronyms}
-% \printglossaries
-\begin{description}
-% 	\item[AIA] Automated Imaging Association
-\end{description}
+% acronyms
+% \newacronym{TST}{TST}{Test}
+\printglossaries
 
-\chapter{Contents of CD}\label{app:CDcontent}
-
+% media contents
+\chapter{Media contents}\label{app:CDcontent}
 \begin{figure}
 % 	\dirtree{%
 % 		.1 readme.txt\DTcomment{the file with CD contents description}.
