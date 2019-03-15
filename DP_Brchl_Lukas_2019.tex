@@ -9,7 +9,7 @@
 % english thesis in English language
 % hidelinks remove colour boxes around hyperlinks
 
-\documentclass[thesis=M,english]{FITthesis}[2019/03/06]
+\documentclass[thesis=M,english]{preferences/FITthesis}[2019/03/06]
 
 % \usepackage{subfig} %subfigures
 % \usepackage{amsmath} %advanced maths
@@ -17,7 +17,25 @@
 
 \usepackage[utf8]{inputenc}
 
+\usepackage{graphicx} %graphics files inclusion
+% \usepackage{amsmath} %advanced maths
+% \usepackage{amssymb} %additional math symbols
+
 \usepackage{dirtree} %directory tree visualisation
+\usepackage{subfig} %image side by side
+\usepackage{todonotes} %todo
+\usepackage{url}
+\usepackage{textcomp} %degree symbol
+\usepackage{color, colortbl} %color, table color
+\usepackage{enumitem} %lists
+\usepackage{float} %for H option in figures
+\usepackage{array} %table aligment       
+\usepackage{amsmath} %cases
+\usepackage{svg} %svg
+\usepackage{scrextend}
+\usepackage{multirow}
+\addtokomafont{labelinglabel}{\sffamily}
+
 
 % list of acronyms
 % \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel,nomain]{glossaries}
@@ -190,7 +208,7 @@ The graphs of index distribution also shows the differencies between the algorit
 	\nocite{Po01}
 \end{conclusion}
 
-\bibliographystyle{iso690.bst}
+\bibliographystyle{preferences/iso690}
 \bibliography{ref}
 
 \appendix
