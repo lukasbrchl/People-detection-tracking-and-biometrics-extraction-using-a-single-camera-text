@@ -1,0 +1,80 @@
+% arara: pdflatex
+
+\documentclass[a4paper]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{microtype}
+
+
+\title{Pokyny k~použití šablony desek závěrečné práce}
+\author{}
+\date{}
+
+\DisableLigatures{}
+
+\renewcommand{\labelitemi}{-}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\maketitle
+
+\thispagestyle{empty}
+
+Kvůli jednotnému vzhledu desek závěrečných prací FIT ČVUT v~Praze je nutné zajistit dodržení navrženého vzhledu a uvedení všech informací. Správný vzhled je zaručen při využití vazárny/tiskárny Powerprint, Zikova~19. Desky si samozřejmě můžete nechat vyrobit kdekoli, v~tom případě je však na Vás zajištění správného vzhledu. Při dohodě s~vazárnou věnujte pozornost zejména následujícím bodům:
+\begin{itemize}
+	\item uvedení všech požadovaných informací v~uvedeném pořadí s~dodržením velikosti písmen:
+	\begin{enumerate}
+		\item NÁZEV VYSOKÉ ŠKOLY A~FAKULTY,
+		\item logo ČVUT,
+		\item název práce,
+		\item TYP PRÁCE,
+		\item rok obhajoby a na stejném řádku jméno a PŘÍJMENÍ studenta včetně titulů;
+	\end{enumerate}
+	\item dodržení navrženého písma, zejména metriky (velikosti i šířky),
+	\item přesné rozmístění,
+	\item informace na deskách budou vytlačené (nestačí pouhý potisk).
+\end{itemize}
+
+Na hřbet umístěte informace v~následujícím formátu:\\
+rok odevzdání (vlevo) \hfill TYP PRÁCE (střed) \hfill jméno a PŘÍJMENÍ (vpravo)
+
+Tato šablona desek je navržena pro použití se systémem \LaTeX{} 2e, odladěna s~distribucí TeXLive 2010.
+
+\section*{Bakalářská práce}
+
+Vyberte si soubor s~prefixem \verb|deskyBP| podle barevné varianty:
+\begin{itemize}
+	\item \verb|invert-barvy| slouží hlavně pro představu o~výsledném vzhledu,
+	\item pro tisk náhledu doporučujeme použít variantu \verb|cernobile|.
+\end{itemize}
+
+Chcete-li vytvořit náhled s~vlastními údaji, zvolte si zdrojový soubor (.tex) podle kódování textu ve Vámi zvoleném editoru. Nevíte-li, podle operačního systému zkuste:
+\begin{itemize}
+	\item ve Windows soubor s~názvem začínajícím \verb|deskyBP_Windows-1250|, nebude-li fungovat, pak \verb|deskyBP_UTF-8|;
+	\item v~jiných operačních systémech soubor s~názvem začínajícím \verb|deskyBP_UTF-8|, případně \verb|deskyBP_ISO-8859-2|.
+\end{itemize}
+
+Soubor zpracujte programem pdflatex (\emph{nikoli} pdfcslatex).
+
+\section*{Magisterská práce}
+
+Vyberte si soubor s~prefixem \verb|deskyDP| podle barevné varianty:
+\begin{itemize}
+	\item \verb|invert-barvy| slouží hlavně pro představu o~výsledném vzhledu,
+	\item pro tisk náhledu doporučujeme použít variantu \verb|cernobile|.
+\end{itemize}
+
+Chcete-li vytvořit náhled s~vlastními údaji, zvolte si zdrojový soubor (.tex) podle kódování textu ve Vámi zvoleném editoru. Nevíte-li, podle operačního systému zkuste:
+\begin{itemize}
+	\item ve Windows soubor s~názvem začínajícím \verb|deskyDP_Windows-1250|, nebude-li fungovat, pak \verb|deskyDP_UTF-8|;
+	\item v~jiných operačních systémech soubor s~názvem začínajícím \verb|deskyDP_UTF-8|, případně \verb|deskyDP_ISO-8859-2|.
+\end{itemize}
+
+Soubor zpracujte programem pdflatex (\emph{nikoli} pdfcslatex).
+
+\end{document}
