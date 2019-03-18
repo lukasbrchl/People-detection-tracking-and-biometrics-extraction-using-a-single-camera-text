@@ -38,10 +38,8 @@
 
 
 % list of acronyms
-\usepackage[acronym,nonumberlist,toc,numberedsection=autolabel,nomain]{glossaries}
-\iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
+\usepackage[acronym,nonumberlist,toc,nopostdot,numberedsection=autolabel,nomain]{glossaries}
 \makeglossaries
-
 \newcommand{\tg}{\mathop{\mathrm{tg}}} %cesky tangens
 \newcommand{\cotg}{\mathop{\mathrm{cotg}}} %cesky cotangens
 
@@ -64,8 +62,13 @@ usage}
 \declarationOfAuthenticityOption{5} %select as appropriate, according to the desired license
 \website{https://github.com/lukasbrchl/People-detection-tracking-and-biometrics-extraction-using-a-single-camera-text} %optional URL (remove entirely if you have no URL for this thesis)
 
+\newacronym{gpu}{GPU}{graphics processing unit}
+\newacronym{mot}{MOT}{multiple object tracking}
+\newacronym{mtmct}{MTMCT}{multi-target multi-camera tracking}
+\newacronym{reid}{ReID}{re-identification}
+
 \begin{document}
-\newacronym{MOT}{MOT}{multiple object tracking}
+
 
 \input{src_text/00_introduction.tex}
 \input{src_text/01_existing_methods.tex}
