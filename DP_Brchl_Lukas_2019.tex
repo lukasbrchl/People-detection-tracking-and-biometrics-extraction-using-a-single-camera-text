@@ -46,8 +46,7 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \department{Department of Applied Mathematics}
-\title{People detection, tracking and biometric data extraction using a single camera for retail
-usage}
+\title{People detection, tracking and biometric data extraction using a single camera for retail usage}
 \authorGN{Luk{\' a}{\v s}} %author's given name/names
 \authorFN{Brchl} %author's surname
 \authorWithDegrees{Bc. Luk{\' a}{\v s} Brchl} %author's name with academic degrees
@@ -62,55 +61,82 @@ usage}
 \declarationOfAuthenticityOption{5} %select as appropriate, according to the desired license
 \website{https://github.com/lukasbrchl/People-detection-tracking-and-biometrics-extraction-using-a-single-camera-text} %optional URL (remove entirely if you have no URL for this thesis)
 
+%introduction
 \newacronym{gpu}{GPU}{graphics processing unit}
 \newacronym{mot}{MOT}{multiple object tracking}
 \newacronym{mtmct}{MTMCT}{multi-target multi-camera tracking}
 \newacronym{reid}{ReID}{re-identification}
+%theoretical backround
+\newacronym{ai}{AI}{artificial intelligence}
+\newacronym{ml}{ML}{machine learning}
+\newacronym{pca}{PCA}{principal component analysis}
+\newacronym{dl}{DL}{deep learning}
+\newacronym{cv}{CV}{computer vision}
+\newacronym{ann}{ANN}{artificial neural network}
+\newacronym{nn}{NN}{neural network}
+\newacronym{mlp}{MLP}{multi layer perceptron}
+\newacronym{cnn}{CNN}{convolutional neural network}
+\newacronym{svm}{SVM}{support vector machine}
+\newacronym{lbp}{LBP}{local binary pattern}
+\newacronym{hog}{HOG}{histogram of oriented gradients}
+\newacronym{sift}{SIFT}{Scale-invariant feature transform}
+\newacronym{surf}{SURF}{Speeded-Up Robust Features}
+\newacronym{r-cnn}{R-CNN}{region-based convolutional network}
+\newacronym{fast r-cnn}{Fast R-CNN}{fast region-based convolutional network}
+\newacronym{faster r-cnn}{Faster R-CNN}{faster region-based convolutional network}
+\newacronym{rpn}{RPN}{region proposal network}
+\newacronym{yolo}{YOLO}{you only look once}
+\newacronym{nms}{NMS}{non-maximum suppression}
+\newacronym{ssd}{SSD}{single-shot detector}
+\newacronym{fps}{FPS}{frames per second}
+%related work
+\newacronym{mots}{MOTS}{multiple object tracking and segmentation}
+\newacronym{sort}{SORT}{simple online and real-time tracking}
+\newacronym{rnn}{RNN}{recurrent neural network}
+\newacronym{lstm}{LSTM}{long short-term memory}
 
 \begin{document}
-
-
-\input{src_text/00_introduction.tex}
-\input{src_text/01_existing_methods.tex}
-\input{src_text/02_analysis.tex}
-\input{src_text/03_design.tex}
-\input{src_text/04_implementation.tex}
-\input{src_text/05_evaluation.tex}
-\input{src_text/06_conclusion.tex}
-
-% bibliography
-\bibliographystyle{prefs/iso690}
-\bibliography{ref}
-
-\appendix
-
-% acronyms
-\printglossaries
-
-% media contents
-\chapter{Media contents}\label{app:CDcontent}
-\begin{figure}
-% 	\dirtree{%
-% 		.1 readme.txt\DTcomment{the file with CD contents description}.
-% 		.1 data\DTcomment{the data files directory}.
-% 		.2 graphs\DTcomment{the directory of graphs of experiments}.
-% 		.3 *.eps\DTcomment{the B/W graphs}.
-% 		.3 *.png\DTcomment{the color graphs}.
-% 		.3 *.dat\DTcomment{the graphs data files}.
-% 		.1 exe\DTcomment{the directory with executable WBDCM program}.
-% 		.2 wbdcm\DTcomment{the WBDCM program executable (UNIX)}.
-% 		.2 wbdcm.exe\DTcomment{the WBDCM program executable (Windows)}.
-% 		.1 src\DTcomment{the directory of source codes}.
-% 		.2 wbdcm\DTcomment{the directory of WBDCM program}.
-% 		.3 Makefile\DTcomment{the makefile of WBDCM program (UNIX)}.
-% 		.2 thesis\DTcomment{the directory of \LaTeX{} source codes of the thesis}.
-% 		.3 figures\DTcomment{the thesis figures directory}.
-% 		.3 *.tex\DTcomment{the \LaTeX{} source code files of the thesis}.
-% 		.1 text\DTcomment{the thesis text directory}.
-% 		.2 thesis.pdf\DTcomment{the Diploma thesis in PDF format}.
-% 		.2 thesis.ps\DTcomment{the Diploma thesis in PS format}.
-% 	}
-\end{figure}
-
+    \input{src_text/00_introduction.tex}
+    \input{src_text/01_theoretical_background.tex}
+    \input{src_text/02_related_work.tex}
+    \input{src_text/03_design.tex}
+    \input{src_text/04_implementation.tex}
+    \input{src_text/05_evaluation.tex}
+    \input{src_text/06_conclusion.tex}
+    
+    % bibliography
+    \bibliographystyle{prefs/iso690}
+    \bibliography{ref}
+    
+    \appendix
+    
+    % acronyms
+    \printglossaries
+    
+    % media contents
+    \chapter{Media contents}\label{app:CDcontent}
+    \begin{figure}
+    % 	\dirtree{%
+    % 		.1 readme.txt\DTcomment{the file with CD contents description}.
+    % 		.1 data\DTcomment{the data files directory}.
+    % 		.2 graphs\DTcomment{the directory of graphs of experiments}.
+    % 		.3 *.eps\DTcomment{the B/W graphs}.
+    % 		.3 *.png\DTcomment{the color graphs}.
+    % 		.3 *.dat\DTcomment{the graphs data files}.
+    % 		.1 exe\DTcomment{the directory with executable WBDCM program}.
+    % 		.2 wbdcm\DTcomment{the WBDCM program executable (UNIX)}.
+    % 		.2 wbdcm.exe\DTcomment{the WBDCM program executable (Windows)}.
+    % 		.1 src\DTcomment{the directory of source codes}.
+    % 		.2 wbdcm\DTcomment{the directory of WBDCM program}.
+    % 		.3 Makefile\DTcomment{the makefile of WBDCM program (UNIX)}.
+    % 		.2 thesis\DTcomment{the directory of \LaTeX{} source codes of the thesis}.
+    % 		.3 figures\DTcomment{the thesis figures directory}.
+    % 		.3 *.tex\DTcomment{the \LaTeX{} source code files of the thesis}.
+    % 		.1 text\DTcomment{the thesis text directory}.
+    % 		.2 thesis.pdf\DTcomment{the Diploma thesis in PDF format}.
+    % 		.2 thesis.ps\DTcomment{the Diploma thesis in PS format}.
+    % 	}
+    \end{figure}
+    
 
 \end{document}
