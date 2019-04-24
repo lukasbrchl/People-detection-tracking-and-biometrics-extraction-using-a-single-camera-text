@@ -327,4 +327,51 @@
         Theano is a Python library that allows to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Since its introduction in 2008, it has been one of the most used CPU and GPU mathematical compilers – especially in the machine learning community - and has shown steady performance improvements. However, the development team decided to stop further releases in 2017. \cite{2016arXiv160502688short}
         
 \section{Evaluation metrics}
-   
+    In this section, we provide a brief overview of common evaluation metrics relevant to the thesis topic.
+    
+    \subsection{\Glsentryfull{iou}}
+        \Gls{iou}, also known as the Jaccard index, is an evaluation metric used as a similarity measure in object detection task. It measures ratio between predicted and ground-truth bounding box given by:
+        
+        \begin{equation}
+            \text{IoU} = \frac{\text{Area of overlap}}{\text{Area of union}} 
+        \end{equation}
+        
+        The possible values for \gls{iou} are from $[0, 1]$ and their significance can be found in Fig \ref{fig:iou-examples}. \Gls{iou} is a common evaluation metric that can be found in any object detection challenge.
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=0.95\textwidth]{resources/iou_examples.png}
+            \caption{An example of computing Intersection over Unions for various bounding boxes. The predicted bounding boxes are drawn in red color, while the ground-truth ones are drawn in green color. Source: \cite{iourosebrock}.}
+            \label{fig:iou-examples}
+        \end{figure}
+        
+    \subsection{\Glsentryfull{mota}}
+        The \gls{mota} is most widely used metric for evaluating a tracker's performance. It's main advantage is expressiveness as it combines three different sources of errors.
+        
+        \begin{itemize}
+            \item \textbf{\Gls{fp}} - The number of false positives (incorrect detections).
+            \item \textbf{\Gls{fn}} - The number of false negatives (missed detections).
+            \item \textbf{\Gls{idsw}} - The number of identity switches.
+        \end{itemize}
+
+        The \gls{mota} equation is then given by:
+        
+        \begin{equation}
+            \text{MOTA} = 1 - \frac{\sum_{t} \left( \text{FN}_t + \text{FP}_t + \text{IDSW}_t \right)}{\sum_{t}\text{GT}_t},
+        \end{equation}
+        
+        where $t$ is the frame index and GT is the number of ground-truth objects. The possible values are reported in the percentage from $(-\infty, 100]$. Negative values are possible when the number of errors made exceeds the number of all objects in sequence.
+    
+    \subsection{\Glsentryfull{motp}} 
+        The \gls{motp} represents the average dissimilarity between the ground-truth and the predicted bounding boxes. It is calculated as 
+        
+        \begin{equation}
+            \text{MOTP} = \frac{\sum_{t,i} d_{t,i}}{\sum_{t}c_t},
+        \end{equation}
+        
+        where $c_t$ denotes the number of matches in frame $t$ and $d_t,i$ denotes the bounding box overlap of ground-truth and the predicted target. It thereby gives the average overlap between all correctly matched hypotheses and their respective objects and ranges between $t_d := 50\%$ and $100\%$. \cite{MOTChallenge2015}
+    
+    \subsection{\Glsentryfull{fps}} 
+        The \gls{fps} is common metric used in many fields to measure run-time performance of algorithms, animations, rendering, etc. In this context, it expresses the ability of algorithm to process and analyze a certain number of images per second. With increasing algorithm complexity, the frame rate decreases. Real-time ability in video sequence processing is assumed at 25 \gls{fps} \cite{MOTChallenge2015}.
+        
+    % \subsection{Mean average precision}
