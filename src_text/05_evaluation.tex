@@ -1,2 +1,23 @@
-\chapter{Evaluation}
-%Further work
+\chapter{Experiments and evaluation}
+
+\section{Dataset}
+    There are several public annotated datasets \cite{ferryman2009pets2009, MOTChallenge2015, zhuvisdrone2018} for a person tracking problem. However, their focus is a little different than what is needed for evaluation of this thesis. Firstly,  
+    individuals only appear in a few images of the sequence, which is not entirely the case from retail, where it is required to maintain the individual's long-term identity even in the case of multiple occlusions. Secondly, these datasets lack of additional information about people and the scene parameters that are required to calibrate the camera. It was therefore advisable to create a dataset to test these cases.
+    
+    The 14th floor of the FSv CTU building was used to create a dataset, where it was possible to place a PC and a camera. In total, over 10,000 images were captured, of which 2463 frames were hand-annotated with bounding-boxes and person identities. There are a total of 3265 bounding boxes with 11 person identities. Captured frames are not further pre-processed.
+  
+\section{Results}
+    In order to be able to compare individual solutions among each other, it is necessary to determine a suitable metric. Due to the fact that metrics for object detection and tracking in the video can often be non-intuitive and complex, the most well-known MOTP and MOTA metrics are adapted in this work. MOTD metrics focus on the quality of detected regions, while MOTA focuses on tracking accuracy, and its calculation affects the number of false positives, undetected watches, and identity swapping. Factors affecting MOTA are also compared, as it is interesting to see how they change depending on the detection network. The metrics are described in more detail in section \ref{evaluation-metrics}, however, to be concise, higher MOTA or MOTP means better.
+    
+
+%Things that didn't work well
+
+%Further works
+% Although KF is designed based on a criterion of linear minimum square errors, the optimal estimation
+% can be achieved by Kalman filtering only if the following three assumptions are met simultaneously: (1)
+% the state model and measurement model are both linear; (2) the model is designed well to fit the actual
+% system; (3) the noise is additive Gaussian noise. In actual or real systems, the second and third
+% assumptions are quite difficult to be met. The designed model will deviate, more or less, from the
+% actual system. 
+
+%child, youth, adult, middleage and elderly

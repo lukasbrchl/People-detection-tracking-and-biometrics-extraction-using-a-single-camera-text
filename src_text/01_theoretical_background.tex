@@ -17,11 +17,13 @@
         \end{figure}
     
     \subsection{Machine learning}
-        While \gls{ai} is a broader concept, \gls{ml} is the core part of it. It is focused on algorithms that can access data and learn from it automatically without human intervention. This is based on the assumption that we should give machines access to information and let them learn from it themselves.
+        While \gls{ai} is a broader concept, \gls{ml} is the core part of it. It focuses on algorithms that can access data and learn from it automatically without human intervention, which is based on the assumption that we should give machines access to information and let them learn from it themselves.
         
-        \Gls{ml} is sometimes considered difficult to understand. However, the basic intuition is not that complicated. At its core, we can imagine that \gls{ml} algorithm is just searching a decision hyperplane of best fit in many dimensions. If we have up to 2-D feature space of the problem, we can even visualize the hyperplane and the results. That is why dimensionality reduction such as \gls{pca} \cite{pearson1901liii} is often used. Moreover, the complexity in the machine learning tasks is the training and preparation of the training dataset. There is a great emphasis on the flawlessness of the dataset because if it contains errors, the algorithm can easily learn these imperfections and thus decrease the generalization performance. 
+        \Gls{ml} is sometimes considered difficult to understand. However, the basic intuition is not that complicated. At its core, we can imagine that \gls{ml} algorithm is just searching a decision hyperplane of best fit in many dimensions. If we have up to 2-D feature space of the problem, we can even visualize the split and the results. That is why dimensionality reduction such as \gls{pca} \cite{pearson1901liii} is often used.
         
-        There are three main \gls{ml} categories that are being actively researched. They differ from each other in the way they handle data, but also with the outputs they provide.
+        The complexity in the machine learning tasks is the training and preparation of the training dataset. There is a great emphasis on the flawlessness of the dataset because if it contains errors, the algorithm can quickly learn these imperfections and thus decrease the generalization performance. 
+        
+        There are three main \gls{ml} categories presented below that are being actively researched. They differ from each other in the way they handle data, but also with the outputs they provide.
         
         \begin{figure}[h]
             \centering
@@ -35,34 +37,34 @@
         \end{figure}
         
         \subsubsection{Supervised learning}
-            In supervised learning, the algorithm focuses on building a mathematical model from a set of available data that contains both the inputs and also the desired outputs. The most common example is to predict house prices based on various features such as the number of rooms, square floor feet, lot area, general condition, etc. \Gls{ml} model takes these features as inputs and based on its internal parameters, it produces output price prediction. This type of supervised learning is called regression. It is characterized by that the output is continuous value. Examples of continuous value are weight, length, temperature, price.
+            In supervised learning, the algorithm focuses on building a mathematical model from a set of available data that contains both the inputs and also the desired outputs. The most common example is to predict house prices based on various features such as the number of rooms, square floor feet, lot area, general condition, etc. \Gls{ml} model takes these features as input and based on its internal parameters, it produces output price prediction. This type of supervised learning is called regression. It is characterized by that the output is continuous value. 
             
-            Another type of supervised learning is classification which is used when the outputs are restricted to a limited set of values. We could consider a simple classification problem as identification of spam emails based on its words. The output prediction for this task would be of either "spam" or "not spam." A traditional supervised classification model used for decades is a \gls{svm} \cite{cortes1995support}, that divides the data into regions separated by a linear boundary. 
+            Another type of supervised learning is classification which is used when the outputs are restricted to a limited set of values. We could consider a simple classification problem as identification of spam emails based on its content. The output prediction for this task would be of either "spam" or "not spam." A traditional supervised classification model used for decades is a \gls{svm} \cite{cortes1995support}, that divides the data into regions separated by a linear boundary. 
             
             There is also popular sub-category called semi-supervised learning that emphasizes on using incomplete data during training, in terms of missing labels for some data samples.
          
         \subsubsection{Unsupervised learning}
-            Unsupervised learning algorithms try to build a mathematical model to find the patterns in data. The data given to the unsupervised model in training phase contains only input features and no desired output labels. Algorithms are then left to themselves to explore and discover critical structures in the data and group the inputs into categories. In the previous example with houses, the model would be able to find similar houses for input parameters, but not to predict the price of a given house. This process is known as clustering.
+            Unsupervised learning algorithms try to build a mathematical model to find patterns in data. The data given to the unsupervised model in training phase contains only input features and no desired output labels. Algorithms are then left to themselves to explore and discover critical structures in the data and group the inputs into clusters (categories). In the previous example with houses, the model would be able to find similar houses for input parameters, but not to predict the price of a given house.
             
-            Typical algorithm representatives for clustering are hierarchical clustering \cite{johnson1967hierarchical}, k-means \cite{macqueen1967some}, and DBSCAN \cite{ester1996density}.
+            Typical algorithm representatives in unsupervised learning are hierarchical clustering \cite{johnson1967hierarchical}, k-means \cite{macqueen1967some}, and DBSCAN \cite{ester1996density}.
 
             
         \subsubsection{Reinforcement learning}
-            In the reinforcement learning, mathematical model, also called agent, is given feedback in the form of positive or negative reward in a dynamic environment. Given the agent's and environment's states, the agent takes actions which will maximize its reward or will explore a new possibility. These actions and rewards are then fed back into the agent and environment which will change their state. This step is repeated many times to improve the agent's behavior for future decisions. 
+            In reinforcement learning, a mathematical model (also called agent) is given feedback in the form of positive or negative reward for his actions in a dynamic environment. Given the agent's and environment's states, the agent only takes actions which will maximize his reward or will explore a new possibility. Results of these actions are then fed back into the agent and environment, and based on that they will change their state. This step is repeated many times to improve the agent's behavior for future decisions. 
             
             Examples of rewards can be winning a game, scoring more points or earning more money. Thus it fits well dynamic tasks. Reinforcement learning, especially with deep neural network extension \cite{franccois2018introduction}, already performs well on a small human-involved task such as playing Atari games and it presents current state-of-the-art results in this field.
        
     \subsection{Deep learning}
-        \Gls{dl} is a specialized form of \gls{ml} and it is currently the cutting edge of what machines can do - it has far surpassed any previous traditional algorithms for classification of images, text, and voice and we can find its use in all current machine learning applications. The essential advantage is that unlike \gls{ml} models, \Gls{dl} models are trained by large labeled sets of data where the model architecture learns the domain features directly without the need for manual feature extraction. This is also known as "end-to-end learning," where a model is given data, optimization criteria, and task to perform, and it learns how to perform this task automatically. Another important fact is that \gls{dl} models often continue to improve as the size of the data increases.
+        \Gls{dl} is a specialized form of \gls{ml} and it is currently the cutting edge of what machines can do - it has far surpassed any previous traditional algorithms for classification of images, text, and voice and we can find its use in all current machine learning applications. The essential advantage is that unlike \gls{ml} models, \Gls{dl} models are trained by large labeled sets of data where the model architecture learns the domain features directly without the need for manual feature extraction. This is also known as "end-to-end learning" where a model is given data, optimization criteria, a task to perform and it learns how to solve this task automatically. Another important fact is that today's \gls{dl} models often continue to improve as the size of the data increases.
         
-        \Gls{dl} tasks can be categorized into the same categories as \gls{ml} such as supervised, unsupervised, and reinforcement learning. The most common \gls{dl} models are based on an artificial neural network, which is why deep learning models are often referred to as deep neural networks. Unlike traditional neural networks with a few hidden layers, deep networks can have as many as a hundred. 
+        \Gls{dl} tasks can be categorized into the same categories as \gls{ml} - supervised, unsupervised, and reinforcement learning. The most common \gls{dl} models are based on an artificial neural network, which is why deep learning models are often referred to as deep neural networks. Unlike traditional neural networks with a few hidden layers, deep networks can have hundreds of layers.
         
-        Although many \gls{dl} approaches such as neural networks had been around for decades \cite{fukushima1980neocognitron, lecun1989backpropagation, lecun1998gradient}, some researches asses that victory of Krizhevsky in October 2012 ImageNet competition started the "deep learning revolution" \cite{russakovsky2015imagenet}. However, it was not the only big break. Google’s Deep reinforcement learning based AlphaGo beating the best Go player in the world \cite{kochgo} also had a great impact on the research community. 
+        Although many \gls{dl} concepts such as neural networks, backpropagation, gradient descent had been around for decades \cite{fukushima1980neocognitron, lecun1989backpropagation, lecun1998gradient}, some researches asses that victory of Krizhevsky in October 2012 ImageNet competition started the "deep learning revolution" \cite{russakovsky2015imagenet}. However, it was not the only big break that happened, for example, Google’s Deep reinforcement learning based AlphaGo beating the best Go player in the world \cite{kochgo} also had a great impact on the research community. 
         
-        There are two main drawbacks while using \gls{dl} approaches. Firstly, it requires a large amount of labeled data. In an example such as autonomous driving, it is often required to have thousands of hours of video, which can take up a few petabytes of storage space. Secondly, \gls{dl} requires substantial computing power, which is most often achieved by using high-performance \gls{gpu}s that have parallel architecture. However, most people, including researchers, do not have their \gls{gpu} cluster, so they use cloud computing that enables them to reduce training time from weeks to hours. There are also many criticism concerns around \gls{dl} because methods are often looked at as a block box with the lack of theory, with most confirmations done empirically rather than theoretically.
+        There are two main drawbacks while using \gls{dl} architectures. Firstly, it requires a large amount of labeled data which is an even bigger problem in critical applications. In an example such as autonomous driving, it is often required to have thousands of hours of video, which can take up a few petabytes of storage space. Secondly, \gls{dl} requires substantial computing power, which is most often achieved by using high-performance \gls{gpu}s that have parallel architecture. However, most people, especially researchers, do not have their \gls{gpu} cluster, so they use cloud computing that enables them to reduce training time from weeks to hours. There are also many criticism concerns around \gls{dl} because methods are often looked at as a block box with the lack of theory, where most confirmations are done empirically rather than theoretically.
         
     \subsection{Computer vision}
-        \Gls{cv} is the process of using machines to process, understand and analyze various types of image data in order to produce numerical or symbolic information, e.g., in the forms of decisions. The motivation is to automate tasks that human visual systems can do to utilize human resources on more critical tasks. Moreover, with a large number of surveillance cameras, it is not possible to monitor all of them by people. 
+        \Gls{cv} is the process of using computers to process, understand and analyze various types of image data in order to produce numerical or symbolic information, e.g., in the forms of decisions. The motivation is to automate tasks that human visual systems can do to utilize human resources on more critical tasks. Moreover, with a large number of surveillance cameras, it is not possible to monitor all of them by people. 
         
         \begin{figure}[ht]
             \centering
@@ -71,9 +73,9 @@
             \label{fig:convolutional neural netwok}
         \end{figure}
         
-        The whole process of deciding over imagery data is called a \gls{cv} pipeline. The traditional pipeline starts with image acquisition, followed by image preprocessing and feature extraction step, ending with a classifier. This pipeline follows well-established principles from any machine learning task. Therefore, we do not consider it necessary to explain it in this work. However, a detailed description of each step can be found in \cite{koenpieline}.
+        The whole process of deciding over imagery data is called a \gls{cv} pipeline. The traditional pipeline starts with image acquisition, followed by image preprocessing and feature extraction step, ending with a classifier. This pipeline follows well-established principles from any \gls{ml} task. Hence we do not consider it necessary to explain it in this work, but we provide a reference to \cite{koenpieline} which offers a detailed description of each step.
     
-        The analyzed image data can be a standard photo or video sequence from a single RGB camera, but also to more complex data such as multiple camera video sequence and multi-dimensional imagery from satellite or medical equipment. Machines interpret this visual content very straightforwardly - as a series of pixels that forms a grid (matrix), where each pixel has its own set of color values (see Fig. \ref{fig:lincon_pixels}). However, in order for the machines to make decisions, they need to understand higher-level concepts in the data, not to use just plain pixel values. Since the size of the imagery data is large, feature extraction is a common technique to obtain high-level features thus helping machines to understand the visual context. 
+        The analyzed image data can be a standard photo or video sequence from a common \gls{rgb} camera, but also to more complex data such as multi-camera video sequence and multi-dimensional imagery from satellite or medical equipment. Computers interpret this visual content very straightforwardly - as a series of pixels that forms a matrix, where each pixel has its own set of color values (see Fig. \ref{fig:lincon_pixels}). However, in order for the machines to make decisions, they need to understand higher-level concepts in the data, not to use just plain pixel values. For this reason, and also because the size of the imagery data is large, feature extraction is a common technique to obtain high-level features, thus helping computers to understand the visual context. 
         
         \begin{figure}[h]
             \centering
@@ -82,29 +84,31 @@
             \subfloat[]{{\includegraphics[width=3.5cm]{resources/lincoln_pixel_values_2.png} }}
             \qquad
             \subfloat[]{{\includegraphics[width=3.5cm]{resources/lincoln_pixel_values_3.png} }}
-            \caption{Pixel data diagram of simplified grayscale image. a) The image itself. b) The pixels labeled with numbers from 0-255, representing their brightness. c) Pixel numbers by themselves. Source: \cite{computervisiongolan}}.
+            \caption{Pixel data diagram of simplified grayscale image demonstrating the semantic gap. a) The image itself. b) The pixels labeled with values from 0 to 255, representing their brightness. c) Pixel numbers by themselves. Source: \cite{computervisiongolan}}.
             \label{fig:lincon_pixels}
         \end{figure}
         
-        To this date, we can observe two main approaches in \gls{cv} pipelines - hand-crafted \gls{ml} methods and \gls{dl} methods. The main difference is how features are obtained before the algorithm decision is made. We can think of mean, variance, median, min, and max of our data as useful measures for discrimination of samples. Since these features are specified explicitly, they are called hand-crafted. In practice, we have more complicated tasks that require more sophisticated statistical functions and complex feature extractors such as Haar \cite{viola2001rapid}, LBP \cite{ojala2002multiresolution}, HoG \cite{dalal2005histograms}, SIFT \cite{lowe2004method}, SURF \cite{bay2006surf}, but the idea is the same - we know how the features will look like in advance. In \gls{dl}, we know nothing about the features until we learn them from data itself. We still need to specify model and its parameters, but the real feature learning is achieved by an iterative optimization process.
+        To this date, we can observe two main approaches in \gls{cv} pipelines - hand-crafted \gls{ml} methods and \gls{dl} methods. The main difference is how features are obtained before they are fed into a classifier. We can think of mean, variance, median, min, and max of our data as useful measures for discrimination of samples, but since these features are specified explicitly, they are called hand-crafted. In practice, we have more complicated tasks that require more sophisticated statistical functions and feature extractors such as Haar \cite{viola2001rapid}, \gls{lbp} \cite{ojala2002multiresolution}, \gls{hog} \cite{dalal2005histograms}, \gls{sift} \cite{lowe2004method}, \gls{surf} \cite{bay2006surf}, but the idea is the same - we know how the features will look like in advance. In \gls{dl}, we know nothing about the features until we learn them from data itself. We still need to specify model and its parameters, but the real feature learning is achieved by an iterative optimization process.
         
-         \Gls{cv} is nowadays ubiquitous in our society. It is used in applications such as image understanding, medicine, self-driving cars, augmented reality, and drones and there are many sub-domains of \gls{cv} that are actively researched. The most significant interest is currently on scene reconstruction, object detection and tracking, human pose estimation, and style transfer. It may be a surprise, but the core of many applications often builds upon something simple as image classification, and while many types of \gls{cv} algorithms have been around since the 1960s, recent developments in computing capabilities have driven significant improvements in how well machines understand the image content. Furthermore, with the advent of \gls{dl} approaches, \gls{cv} is becoming increasingly popular, and at the same time, there is a noticeable increase in the accuracy of many existing \gls{cv} applications. 
+        \Gls{cv} is nowadays ubiquitous in our society. It is used in applications such as image understanding, medicine, self-driving cars, augmented reality, and drones and there are many sub-domains of \gls{cv} that are actively researched. The most significant interest is currently on scene reconstruction, object detection and tracking, human pose estimation, and style transfer. It may be a surprise, but the core of many applications often builds upon something simple as image classification, and while many types of \gls{cv} algorithms have been around since the 1960s, recent developments in computing capabilities have driven significant improvements in how well machines understand the image content. Furthermore, with the advent of \gls{dl} approaches, \gls{cv} is becoming increasingly popular, and at the same time, there is a noticeable increase in the accuracy of many existing \gls{cv} applications. 
      
 \section{Computer vision approaches}
-    Because the computer vision field has massively transformed into \gls{dl} algorithms, we present a brief overview of some conventional approaches that are used for solving computer vision tasks.
+    Because the \gls{cv} field has massively transformed into \gls{dl} algorithms, we present a brief overview of some conventional approaches that are used for solving today's \gls{cv} tasks.
     
     \subsection{Artificial neural network}
         \Gls{ann}, or simply \gls{nn} in this context, is an interconnected graph of artificial neurons that uses computational model for solving \gls{ml} tasks. In more practical terms, \gls{nn} are non-linear statistical data modeling or decision making tools that can be used to model complex relationships between inputs and outputs or to find patterns in data. In most cases, a \gls{nn} adapts its internal structure based on information that flows through the network. Thanks to many breakthrough results in recent years, it generated much excitement in the research community. 
         
         \subsubsection{Artificial neuron}
-            There are many types of \gls{nn}s. However, the most researched and utilized is a particular type known as the \gls{mlp}. Its basic unit of computation is called neuron (or node). It receives input from other neurons and computes an output value. Each input $x_i$ of a neuron has its a particular weight $w_i$ value associated. The weight can be understood as relative importance to other neuron inputs. Weights and inputs are added together in weighted sum and additional bias term $b$ is used to correct this value. In the end, activation function $\varphi$ is used to generate an output of the neuron $y_k$.  In mathematical notation, the output of a neuron is given by:
+            There are many types of \gls{nn}s. However, the most researched and utilized is a particular type known as the \gls{mlp}. Its basic unit of computation is called neuron (or node). It receives input from other neurons and computes an output value. Each input $x_i$ of a neuron has its a particular weight $w_i$ value associated. The weight can be understood as relative importance to other neuron inputs. Weights and inputs are added together in weighted sum and additional bias parameter $b$ is used as a correction. In the end, activation function $\varphi$ is used to generate an output of the neuron $y_k$.  In mathematical notation, the output of a neuron is given by:
     
             \begin{equation}
                 y_k = \varphi \left(\sum\limits_{j=1}^n w_j x_j + b \right)
             \end{equation}
         
         \subsubsection{Activation function}
-            Since most of the real world data are non-linear, the activation function must be non-linear too. This is also very important for Universal approximation theorem \cite{hornik1989multilayer}, which says that a \gls{mlp} can approximate any function, i.e., can in principle learn anything. To this date, many activation functions were proposed, but the most commonly known are:
+            Since most of the real world data are non-linear, the activation function must be non-linear too. This is also very important for Universal approximation theorem \cite{hornik1989multilayer}, which says that a \gls{mlp} can approximate any function, i.e., can in principle learn anything. 
+            
+            To this date, many activation functions were proposed, but the most commonly known are:
             
            \begin{itemize}
                 \item \textbf{Sigmoid} - The sigmoid non-linearity squashes real numbers to range between $[0,1]$.
@@ -126,15 +130,15 @@
                 \end{equation}
             \end{itemize}
     
-            The activation function selection is crucial for task accuracy and performance. However, their thorough description is very comprehensive. Hence we recommend \cite{cs231n} for their detailed overview.
+            The activation function selection is crucial for task accuracy and performance. However, their thorough description is very comprehensive. Thus we recommend \cite{cs231n} for their detailed overview.
 
         \subsubsection{Feed-forward neural network}
-            Feed-forward \gls{nn} contains multiple neurons arranged in layers. Nodes from adjacent layers have connections between them, and all these connections have associated weights. In this type of network, the information moves only in the forward direction, hence the name. No cycles are allowed in this network architecture.
+            Feed-forward \gls{nn} contains multiple neurons arranged in layers. Nodes from adjacent layers have connections between them, and all these connections have associated weights. In this type of network, the information moves only in the forward direction, hence the name. No cycles are allowed in this architecture.
             
-            A feed-forward neural network can consist of three types of layers:
+            A feed-forward \gls{nn} can consist of three types of layers:
             
             \begin{itemize}
-                \item \textbf{Input layer} - The input layer is always at the beginning of the network. It provides information from outside of the model to the network. No computation is performed at this stage; values are just passed to further neurons.
+                \item \textbf{Input layer} - The input layer is always at the beginning of the network. It provides information from outside of the model to the network. No computation is performed at this stage, and values are just passed to further neurons.
                 \item \textbf{Hidden layer} - Neurons in this layer perform computations to output nodes based on input nodes and internal parameters. A feed-forward network can have zero or multiple hidden layers.
                 \item \textbf{Output layer} - This layer is responsible for transferring the computed information from the network to the outside world. The transferred information usually represent a class probability score or some real-valued prediction.
             \end{itemize}
@@ -151,9 +155,11 @@
             \end{figure}
             
     \subsection{Convolutional neural network}
-        One of the most common methods for solving computer vision task is \gls{cnn}. It uses convolutional layers to learn features from input data without minimal preprocessing. Hence it eliminates the need for manual feature extraction as in traditional methods. The features are learned while the \gls{cnn} trains on large labeled image dataset. This approach has shown to be highly accurate since it outperforms humans in image recognition task \cite{russakovsky2015imagenet} and it is is one of the most popular techniques for deep learning. Current applications such as object self-driving cars, object detection, medical image classification, combined with advances in GPUs and parallel computing, heavily relies on \gls{cnn} architectures. 
+        One of the most common methods for solving computer vision task is \gls{cnn}. It uses convolutional layers to learn features from input data without minimal preprocessing. Therefore, it eliminates the need for manual feature extraction as in traditional methods. The features are learned while the \gls{cnn} trains on large labeled image dataset. This approach has shown to be highly accurate since it outperforms humans in image recognition task \cite{russakovsky2015imagenet} and it is is one of the most popular techniques for deep learning. Current applications such as object self-driving cars, object detection, medical image classification, combined with advances in GPUs and parallel computing, heavily relies on \gls{cnn} architectures. 
 
-        A \gls{cnn} can have tens to hundreds of layers that each learn to detect different patterns or features of an image. Depth of the \gls{cnn} is critical component for a good performance \cite{russakovsky2015imagenet}. Since there is the explicit assumption that the inputs are grid-like topology, such as an image, certain properties are encoded into layer architecture that makes the forward function more efficient by reducing the number of parameters in the network. Network layers perform operations that alter the data with the intent of learning features specific to the data. Three of the most important layers are convolution, activation, and pooling which are often applied multiple times in a row before concluding the process of feature extraction. The goal of repetition is to identify different features, and the argument for this is the observation that images contain hierarchical structure (e.g., faces are made up of eyes, which are made up of edges, etc.), so several layers of processing will increase in extracted features complexity to features that uniquely define particular object. The outputs of this whole process are then often passed into a fully connected layer for final output, i.e., class score probabilities. 
+        A \gls{cnn} can have tens to hundreds of layers that each learn to detect different patterns or features of an image. Depth of the \gls{cnn} is critical component for a good performance \cite{russakovsky2015imagenet}. Since there is the explicit assumption that the inputs are grid-like topology, such as an image, certain properties are encoded into layer architecture that makes the forward function more efficient by reducing the number of parameters in the network. Network layers perform operations that alter the data with the intent of learning features specific to the data. 
+        
+        Three of the most critical layers are convolution, activation, and pooling which are often applied multiple times in a row before concluding the process of feature extraction. The goal of repetition is to identify different features, and the argument for this is the observation that images contain hierarchical structure (e.g., faces are made up of eyes, which are made up of edges, etc.), so several layers of processing will increase in extracted features complexity to features that uniquely define particular object. The outputs of this whole process are then often passed into a fully connected layer for final output, i.e., class score probabilities. 
         
         Layout, number, and type of layers form the architecture of the \gls{cnn}. To this date, dozens of architectures were proposed, and the most famous are LeNet, AlexNet, VGGNet, Inception, ResNet, ResNeXt, and DenseNet. Since each of these architectures would require extensive description, we consider it as out of the scope of this thesis, and we suggest \cite{cs231n, dascnnoverview, jordancnnoverview} for further reading. 
 
@@ -165,37 +171,79 @@
         \end{figure}
         
         \subsubsection{Convolution layer}
-            The convolution layer is the core building block of any \gls{cnn}, where the input image pixels are modified by a convolutional filter, which is a matrix that is multiplied with different parts of the input image. The filter is spatially smaller than an image (e.g., 3x3, 5x5, 8x8), but is more in-depth. Each filter aims to activate certain features from the images. The output this layer is known as feature map (alternatively activation map) which is usually smaller in size but has more dimensions. Ideally, a feature map will be less redundant and more informative than the original input.
+            The convolution layer is the core building block of any \gls{cnn}, where the input image pixels are modified by a convolutional filter, which is a matrix that is multiplied with different parts of the input image. The filter is spatially smaller than an image (e.g., 3x3, 5x5, 8x8), but is more in-depth. Each filter aims to activate certain features from the images. The output of this layer is known as a feature map (alternatively activation map), and it is usually smaller in size but has more dimensions. Theoretically, a feature map will be less redundant and more informative than the original input.
             
         \subsubsection{Activation layer}
-            The purpose of this layer is the same as in the \gls{ann}, to introduce non-linearity in the feature map. Favorite choice in the \gls{cnn} case is ReLU due to its simplicity, hence effective training process.
+            The purpose of this layer is the same as in the \gls{ann}, to introduce non-linearity in the feature maps. Favorite choice in the \gls{cnn} case is ReLU due to its simplicity which implies an effective training process.
             
         \subsubsection{Pooling layer}
             Since the convolutional layer expands dimensionality, pooling is a process that reduces the size of the feature map by a factor of whatever size is pooled. The consequence is the reduction of the number of parameters that the network needs to learn. The input image is scanned over each dimension by a sliding window and either the max, sum or average the window is taken as a representation of that portion of the image. 
             
         \subsubsection{Fully-connected layer}
-            A fully-connected layer is most often the last layer of the \gls{cnn} architecture. It stands for common feed-forward \gls{nn} with fixed input size explained in the previous section. Adding this type of layer usually helps with combining the high-level features from convolutional layers into a non-linear function. The fully connected network outputs a vector that contains the probabilities of each object class of an image being classified.
-
+            A fully-connected layer is most often the last layer of the \gls{cnn} architecture. It is implemented as a common feed-forward \gls{nn} with fixed input size. Adding this type of layer usually helps with combining the high-level features from convolutional layers into a non-linear function. A frequent choice of fully-connected layer output type is a vector that contains the probabilities of each object class of an image being classified.
 
     \subsection{Transfer Learning}
-        It is sporadic for people to train an entire \gls{cnn} from scratch. There are three main reasons for this. Firstly, it has been proved that \gls{cnn} and \gls{nn} are very sensitive to proper weights initialization. Many works have been done on this topic, and it is generally not recommended to use random or zero initialization since it can lead to the vanishing or exploding gradients. Secondly, there are very few datasets with sufficient size. Using only a tiny dataset will lead to insufficient accuracy and overfitting. Lastly, the training phase is computationally intensive. Modern \gls{cnn} architectures can take a few weeks to train on multiple \gls{gpu}s properly.
+        It is sporadic for people to train an entire \gls{cnn} from scratch. There are three main reasons for this. Firstly, it has been proved that \gls{cnn} and \gls{nn} are very sensitive to proper weights initialization. Many works have been done on this topic, and it is generally not recommended to use random or zero initialization since it can lead to several problems during training. Secondly, there are very few datasets with sufficient size. Using only a tiny dataset will lead to insufficient accuracy or overfitting. Lastly, the training phase is computationally intensive. Modern \gls{cnn} architectures can take a few weeks to train on multiple \gls{gpu}s properly.
 
-        In practice, it is common to take pretrained parameters from existing \gls{cnn} used for similar task (e.g., ImageNet classification \cite{russakovsky2015imagenet}, which contains 1.2 million images with 1000 categories) and use them as initialization or a fixed feature extractor for the task of interest. It is very straight-forward to use existing \gls{cnn} as a feature extractor, only the last fully-connected layer needs to be removed or replaced.
+        In practice, it is common to take pre-trained parameters from existing \gls{cnn} used for a similar task (e.g., ImageNet classification \cite{russakovsky2015imagenet}, which contains 1.2 million images with 1000 categories) and use them as initialization or a fixed feature extractor for the task of interest. This use of existing \gls{cnn} as a feature extractor is straight-forward because only the last fully-connected layer needs to be removed or replaced.
         
 \section{Computer vision tasks}
-    In this section, we provide a quick overview of tasks relevant to the thesis topic and their specific challenges. Since the first early steps of computer vision field in the 1960s, the scientists tried to build camera robots with intelligent behavior. However, it turned out to be a much more complex problem than they initially thought and as a first step, they desire was to extract three-dimensional structure from two-dimensional images to achieve full scene understanding, thus forming the very first computer vision task - scene reconstruction. This time was the foundation for many computer vision algorithms that exist today, including edge detector and lines extractors. Later, the robots, who now understood the scene, needed to move around while avoiding obstacles. This could be accomplished through motion analysis. Some existing algorithms such as Kalman filter already existed. Therefore, they were adapted to \gls{cv} field. Recent work is mostly focused on feature-based methods used together with machine learning algorithms to produce numerical or symbolic information for decision making. 
+    In this section, we provide a quick overview of tasks relevant to the thesis topic and their specific challenges. Since the first early steps of computer vision field in the 1960s, the scientists tried to build camera robots with intelligent behavior. However, it turned out to be a much more complex problem than they initially thought and as a first step, they desired to extract 3-D structure from 2-D images to achieve full scene understanding. Therefore, forming the very first computer vision task - scene reconstruction. Moreover, it was this time, that many feature extraction algorithms that are popular today were founded, including edge detector and lines extractors. 
+    
+    Later, the robots, which partially understood the scene, needed to move around while avoiding obstacles, which could be accomplished through motion analysis. Some existing algorithms such as Kalman filter already existed. Hence they were adapted to \gls{cv} field. However, motion detection algorithms such as optical flow and background subtraction methods have also been developed.
+    
+    In recent years, there is a significant advance in this field, and we can finally see the real applications of these robots which are, for example, self-driving cars. As a result, today's most considerable emphasis is on feature-based methods used together with machine learning algorithms to produce numerical or symbolic information for decision making. However, it should be noted that many algorithms still come from the research done in early beginnings. 
     
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.95\textwidth]{resources/computer-vision-tasks.png}
-        \caption{Common computer vision tasks. Source: \cite{cs231n}.}
+        \caption{\Gls{cv} tasks that are most popular nowadays. Source: \cite{cs231n}.}
         \label{fig:computer-vision-tasks}
     \end{figure}
     
+    
+    \subsection{Camera calibration}\label{camera_calibration}
+        Cameras and other sensors with optics have been with us for decades. Recently they became part of our everyday life which can be demonstrated, for example, by finding it on every phone or laptop. However, these cameras have one big drawback caused by their easy availability and cheap purchase price. Their image is distorted considerably. Fortunately, the distortion can be described by mathematical equations and can, therefore, be partially or entirely removed. 
+        
+        To deal with the distortion, the camera calibration technique is most often employed. It is the process of finding the intrinsic and extrinsic parameters of arbitrary camera setup. The intrinsic parameters deal with the internal characteristics of the camera and lens combination. The extrinsic parameters refer to the 3D orientation and position of the camera in the space. Example of intrinsic parameters is the focal length, principal point, sensor skew. With knowledge of intrinsic parameters, it is possible to establish a relation between image pixels and real-world units to do real-world measurements and also remove lens distortion, which degrades image quality. 
+        
+        Two essential types of distortion exist. First is radial distortion that causes straight lines to appear curved. It becomes larger the farther points are from the center of the frame. The other one is tangential distortion caused by the lens not parallel to the image plane. Before running any critical \gls{cv} application, both distortions need to be corrected first. 
+        
+        The radial distortion can be represented as follows:
+
+        \begin{align}
+            x_{distorted} = x( 1 + k_1 r^2 + k_2 r^4 + k_3 r^6) \\ 
+            y_{distorted} = y( 1 + k_1 r^2 + k_2 r^4 + k_3 r^6),
+        \end{align}
+        and tangential as follows:
+        \begin{align}
+            x_{distorted} = x + [ 2p_1xy + p_2(r^2+2x^2)] \\
+            y_{distorted} = y + [ p_1(r^2+ 2y^2)+ 2p_2xy],
+        \end{align}
+        where $x, y$ are coordinates of the original point, $x_{distorted}, y_{distorted}$ are their distorted projections, and $k_1, k_2, k_3, p_1, p_2$ are unknown distortion coefficients. These coefficients do not depend on the scene viewed and they remain the same regardless of the captured image resolution.
+        
+        To find these coefficients, we must provide several images of predefined and well-known pattern to camera calibration framework. Generally, it is recommended to use at least ten images of the pattern from different angles. The framework then detects specific points in the image of which relative positions are known. Based on these image coordinates and their relative correspondence in the real world, it is possible to solve for distortion coefficients. A standard pattern used in camera calibration is a chess board with square corners as target points. For a more detailed description of this technique, we recommend \cite{zhang1999flexible}.
+
+    \subsection{3-D scene reconstruction}
+        3-D reconstruction is the process of obtaining 3-D information from the captured 2-D scene. It is a complicated process by the fact that in the imaging process the depth of the space is lost. To solve this task, stereo vision or methods based on triangulation with multiple captured images from different angles are often employed. However, some single-view approaches are sufficient to obtain a partial or complete reconstruction, and for the scope of this thesis, they are the most relevant.
+        
+        Single-view approaches might be further categorized into calibrated and uncalibrated methods. Calibrated ones use parameters obtained by camera calibration presented in \ref{camera_calibration}, and their main disadvantage is that internal camera parameters may not always be constant. The intrinsic parameters may be affected by environment effects or only by changing a focal length. Proposals for the calibrated methods can be found in \cite{orteu1997camera, wilczkowiak2001camera, kushal2002simple}.
+        
+        On the other hand, algorithms developed for uncalibrated scenarios require no knowledge of the camera's intrinsic and extrinsic parameters. The use of known scene constraints replaces camera calibration. These constraints include planarity of points, the parallelism of lines, and parallelism of points. Therefore, no scene markers or specialized sensors are required; these cues are inferred directly from the captured 2-D image, which leads to flexible algorithms that can be applied to a wide range of scenarios. One of the most famous works in this field is \cite{criminisi2012accurate}.
+
+        Further, the discipline that deals with estimating real-world measurements in 2-D image scenes is known as single-view metrology. The groundbreaking work in this field is \cite{criminisi2002single}.
+        
+    \subsection{Motion analysis}
+        As a result of access to a massive amount of video data, motion analysis has drawn considerable interest in recent times. Its main goal is to output information based on the apparent motion in the sequential images. The information produced often depends on neighboring images and is related to specific time-point. 
+
+        Motion analysis is a field that has been researched since the 1970s, but since then, the algorithms, approaches, and also disciplines has changed. Most proposed methods are based on pixel displacements of underlying physical points. The simplest representative in this field is an optical flow algorithm that detects motion. Nowadays we are more likely to encounter more complex frameworks used in the task such as human motion analysis, scene behavioral analysis, and surveillance tracking.
+        
+        In the context of tracking, motion information is mostly employed as one of the features that are used during the matching step between new and previously tracked objects. Modern motion filters also allow us to predict movement information of objects even if no motion information is available in multiple frames. Examples of well-used motion filters are particle filter, and Kalman Filter and its non-linear variants. Their thorough comparison can be found in \cite{labbe2015kalman}.
+  
     \subsection{Image classification}
         The typical problem in computer vision field is that of determining if image data contain a specific object. Image classification, with its main component known as classifier, is a particular application of computer vision which assigns an input image one label from a fixed set of categories. The general approach is to assign probabilities for each class and then choose the most likely one. Despite its simplicity, it is one of the core problems in computer vision with a large variety of applications. Moreover, many other distinct computer vision tasks (localization, object detection, segmentation, etc.) can be reduced to image classification.
         
-        In Fig. \ref{fig:image_classification}, we can see the image of a cat with associated probabilities of belonging into four categories. We need to keep in mind that in this case, the image is represented as a large 3-dimensional matrix of numbers in a machine's memory. In this figure, the image is 248 pixels wide, 400 pixels tall, and has three color channels. Therefore, the image consists of 248 x 400 x 3 numbers, or a total of 297,600 numbers. Each number is an integer that ranges from 0 (black) to 255 (white). The task is to turn a quarter of a million numbers into a single label, such as “cat.” \cite{cs231n}
+        In Fig. \ref{fig:image_classification}, we can see the image of a cat with associated probabilities of belonging into four categories. We need to keep in mind that in this figure, the image is represented as a large 3-dimensional matrix of numbers in a computer's memory. In this case, the image is 248 pixels wide, 400 pixels tall, and has three color channels. Therefore, the image consists of $248 \times 400 \times 3$ numbers, or a total of $297 600$ numbers. Each number is an integer that ranges from 0 (black) to 255 (white). To conclude, Therefore, the task is to turn a quarter of a million numbers into a single label, such as cat. \cite{cs231n}
         
         \begin{figure}[ht]
             \centering
@@ -204,7 +252,7 @@
             \label{fig:image_classification}
         \end{figure}
     
-        Since this task of recognizing objects is relatively trivial for humans, it only makes sense to consider challenges for \gls{cv} algorithms. The challenges are shown in Fig. \ref{fig:image_classification_challenges} and they are especially:
+        Since this task of recognizing objects is relatively trivial for humans, it only makes sense to consider challenges for \gls{cv} algorithms. The challenges are visualized in Fig. \ref{fig:image_classification_challenges} and they are especially:
     
         \begin{itemize}
             \item \textbf{Viewpoint variation} - A single instance of an object can be oriented in many ways concerning the camera.
@@ -226,14 +274,18 @@
          A good image classification model must be invariant to the cross product of all these variations, while simultaneously retaining sensitivity to the inter-class variations. \cite{cs231n}
          
     \subsection{Object detection}
-        Image classification models can classify input images into the most likely category. However, typical images including photos are usually more complex and contain multiple objects. Therefore, assigning single object category does not make much sense. Object detection is a well-researched and more appropriate method that helps to identify multiple objects from predefined categories from a single image. The output of the typical object detector is an object's bounding box, category, and confidence of the detection. The coordinates of the bounding boxes can be then used for further visual tasks.
+        Image classification models can classify input images into the most likely category. However, typical images including photos are usually more complex and contain multiple objects. Hence, assigning single object category does not make much sense.
         
-        The first important object detector based on Haar cascades was proposed by Paul Viola and Michael Jones in 2001 \cite{viola2001rapid}. It was able to operate in real-time and was subsequently implemented in digital cameras. Although it could be trained to detect a variety of object classes, it was used mainly for the face detection task. After a long time, in 2005, another promising detector known as \gls{hog} \cite{dalal2005histograms} was introduced. It was focused for pedestrian detection in static images and was further improved for video sequences, as well as to a variety of object classes including animals and vehicles. \Gls{hog} has been used for a long time in conjunction with other feature extractors for various detection tasks until the success of \gls{dl} architecture in 2012 ImageNet competition \cite{russakovsky2015imagenet}. Since then, the use of conventional detectors is mostly replaced with deep neural networks.
+        Object detection is a well-researched and more appropriate method that helps to identify multiple objects from predefined categories from a single image. The output of the typical object detector is an object's bounding box, category, and confidence of the detection. The bounding box patches can be then used for further visual tasks.
         
-        In object detection based on \gls{cnn}s, there are two main core design choices. First is, hypothesize object regions and then classify them. Second, divide the image into a grid and directly predict bounding boxes and class probabilities in a single evaluation - only one feed-forward pass. A few state-of-the-art representatives for each category are briefly reviewed below. For their detailed overview, we suggest \cite{huang2017speed, xuobjectdetection, ouaknineobjectdetection}.
+        The big break in object detectors came in 2001 with the introduction of Haar cascades by Paul Viola and Michael Jones \cite{viola2001rapid}. Their detector was able to operate in real-time and was subsequently implemented in all digital cameras. Although it could be trained to detect a variety of object classes, it was used mainly for the face detection task. 
+        
+        After a long time, another promising detector known as \gls{hog} \cite{dalal2005histograms} was introduced in 2005. \gls{hog} was focused on pedestrian detection in static images and was further improved for video sequences, as well as to a variety of object classes including animals and vehicles. It has been used for a long time in conjunction with other feature extractors for various detection tasks until the success of \gls{dl} architecture in 2012 ImageNet competition \cite{russakovsky2015imagenet}. Since then, the use of conventional detectors is mostly replaced with deep neural networks.
+        
+        In object detection based on \gls{cnn}s, there are two main core design choices. First is, hypothesize object regions and then classify them. Second, divide the image into a grid and directly predict bounding boxes with class probabilities in a single evaluation, thus only one feed-forward pass. Although a few state-of-the-art representatives for each category are briefly reviewed below we suggest \cite{huang2017speed, xuobjectdetection, ouaknineobjectdetection} for their detailed overview.
         
         \subsubsection{\Glsentryfull{r-cnn}}
-            \Gls{r-cnn} \cite{girshick2016region} is very first and intuitive architecture that started the era of object detection with \gls{cnn}s. The pipeline of the model begins with scanning the input image for possible objects using Selective Search algorithm \cite{uijlings2013selective}. This method generates a large number of proposals that are reduced to some reasonable amount (typically to order of thousands). Moreover, each proposal is also resized to match the input of a \gls{cnn}, which is used to extract image features. The output vector of the \gls{cnn} is fed into a \gls{svm} classifier to verify if an object exists within the region and if yes, a linear regressor is used to refine the bounding box.
+            \Gls{r-cnn} \cite{girshick2016region} is very first and intuitive architecture that started the era of object detection with \gls{cnn}s. The pipeline of the model begins with scanning the input image for possible objects using Selective Search algorithm \cite{uijlings2013selective}, which generates a large number of proposals that are reduced to some reasonable amount (typically to order of thousands). Moreover, each proposal is also resized to match the input of a \gls{cnn}. Further, the \gls{cnn} is used to extract image features, and the output vector is then fed into a \gls{svm} classifier to verify if an object exists within the region. If yes, a linear regressor is used to refine the position of the bounding box.
             
             \begin{figure}[ht]
                 \centering
@@ -242,12 +294,12 @@
                 \label{fig:r-cnn architecture}
             \end{figure}
         
-            To sum it up, this approach turns object detection into an image classification discussed before. The drawback of this method is that the training and inference are very slow. For example, the inference time for a single image varies from tens of seconds to minutes.
+            To sum it up, this approach turns object detection into an image classification discussed before. The drawback of this method is that the training and inference performance is very slow. For example, the inference time for a single image varies from tens of seconds to minutes.
 
         \subsubsection{\Glsentryfull{fast r-cnn}}
             Just year after the publication of \gls{r-cnn}, the same authors improved the approach with new \gls{fast r-cnn} \cite{girshick2015fast} architecture. It resembled the original in many ways. However, they drastically improved the training and testing speed performance.
             
-            The improvement consisted of two main aspects. The feature extraction run by \gls{cnn} is no longer run thousands time over proposed regions, but only once over the entire image. The regions are still obtained by Selective search algorithm. However, its input is the output of the \gls{cnn} - feature map. The proposed regions are then reshaped using an RoI pooling layer and instead of training many different \gls{svm} classifiers for each object class, there is a single fully connected \gls{nn} with softmax layer that outputs the class probabilities directly.
+            The improvement consisted of two main aspects. The feature extraction run by \gls{cnn} is no longer run thousands of time over each of the proposed regions, but only once over the entire image. The regions are still obtained by Selective search algorithm. However, its input is the feature map output of the \gls{cnn}. The proposed regions are then reshaped using an RoI pooling layer and instead of training many different \gls{svm} classifiers for each object class, there is a single fully connected \gls{nn} with softmax layer that outputs the class probabilities directly.
             
             \begin{figure}[ht]
                 \centering
@@ -257,7 +309,7 @@
             \end{figure}
     
         \subsubsection{\Glsentryfull{faster r-cnn}}
-            Both of the architectures mentioned above use a Selective Search algorithm to find out the region proposals. However, it turned out that Selective Search is the computational bottleneck. Besides that, it has another big disadvantage - it is a fixed algorithm; no learning is happening which can lead to bad region proposal candidates. Therefore, a new architecture know as \gls{faster r-cnn} \cite{ren2015faster} was introduced to improve these shortcomings. 
+            Both of the architectures mentioned above use a Selective Search algorithm to find out the region proposals. However, it turned out that Selective Search is the computational bottleneck. Besides that, it has another big disadvantage - it is a fixed algorithm; no parameter learning is happening during the training phase which may lead to bad region proposal candidates. Therefore, a new architecture know as \gls{faster r-cnn} \cite{ren2015faster} was introduced to improve these shortcomings. 
             
             \Gls{faster r-cnn} completely replaced the use of the Selective Search algorithm with a separate \gls{nn} (known as the \gls{rpn}) to identify region proposals. The \gls{rpn} is run right after the feature extraction, and once we obtain the region proposals, they are feed into what is essentially \gls{fast r-cnn}.
 
@@ -268,12 +320,14 @@
                 \label{fig:faster r-cnn architecture}
             \end{figure}
             
-            To be concise, \gls{faster r-cnn} is combination between the \gls{rpn} and \gls{fast r-cnn}. It is much faster than its predecessors, and it can even be used for real-time object detection in a video sequence. To date, it is still widely used thanks to its speed and accuracy performance.
+            To conclude, \gls{faster r-cnn} is combination between the \gls{rpn} and \gls{fast r-cnn}. It is much faster than its predecessors, and it can even be used for real-time object detection in a video sequence. It is still widely deployed in today's frameworks thanks to its speed and accuracy performance.
             
         \subsubsection{\Glsentryfull{yolo}}
             All of the previous object detection algorithms use proposed regions to localize the object within the image. It means that the detector does not look at the whole image. Instead, it evaluates regions which have high probabilities of containing the object. In \gls{yolo} \cite{redmon2016you}, a single \gls{cnn} directly predicts bounding boxes and class probabilities with a single forward pass.
             
-            Initially, the model takes the input image and divides it into an SxS grid. Within each cell of the grid, m bounding boxes are taken. For each of selected bounding box, the network outputs a class probability and refinement for the bounding box. If bounding box has the class probability above a threshold value, it is then used to locate the object within the image. Since the model predicts a high number of bounding boxes, the \gls{nms} method is applied at the end of the network to merge highly-overlapping bounding boxes of the same object into a single one.
+            Initially, the model takes the input image and divides it into a $S \times S$ grid. Within each cell of the grid, $m$ bounding boxes are taken. For each of selected bounding box, the network outputs a class probability and refinement for the bounding box. If the bounding box has the class probability above a threshold value, it is then used to locate the object within the image. 
+            
+            Since the model predicts a high number of bounding boxes, the \gls{nms} \cite{rosebrocknms} procedure is applied at the end of the network to merge highly-overlapping bounding boxes of the same object into a single one.
             
              \begin{figure}[ht]
                 \centering
@@ -282,12 +336,12 @@
                 \label{fig:yolo approach}
             \end{figure}
             
-            Due to its simplicity, it is much faster than other detection algorithms mentioned. Depending on the backbone architecture, it can run approximately 15 to 150 \gls{fps}. The limitations of \gls{yolo} are that it struggles with small objects and unusual aspect ratios, which is due to the spatial constraints of the algorithm.
-
-    % \subsection{Instance segmentation}
+            Due to its simplicity, it is much faster than other detection algorithms mentioned. Depending on the backbone architecture, it can run approximately 15 to 150 \gls{fps}. The limitations of \gls{yolo} are that it struggles with small objects and unusual aspect ratios, which is due to the spatial constraints of the algorithm. However, the authors tried to improve this shortcoming in the newly released \gls{yolo}v3 architecture.
 
     \subsection{Face recognition}
-        Face recognition is a prominent biometric technique that is used for everything from automatically tagging pictures on social networks to unlocking cell phones. It has been a long-standing research topic in the \gls{cv} community since it uses \gls{cv} algorithms to extract specific and distinctive information about a person's face, such as distance between the eyes, shape of the chin. This information is then converted to a feature vector and stored into a face database. It is desired only to include specific details that can distinguish one face from another to maintain a reasonable size of the feature vector. 
+        Face recognition is a prominent biometric technique that is used for everything from automatically tagging pictures on social networks to unlocking cell phones. Its main components are an object detector trained to detect face regions and classifier that embeds faces into vectors.
+        
+        It has been a long-standing research topic in the \gls{cv} community since it uses \gls{cv} algorithms to extract specific and distinctive information about a person's face, such as distance between the eyes, shape of the chin. This information is then converted to a compact feature vector and stored into a face database. It is desired only to include specific details that can distinguish one face from another to maintain a reasonable size of the feature vector. 
         
         Each facial feature vector can be compared to others to find the most likely match which helps to verify personal identity. However, some face recognition systems are designed to calculate a probability match score to provide several potential matches, instead of just returning a single result. The results of face recognition systems can vary under challenging conditions such as poor lighting, low resolution, improper angle of view.
         
@@ -300,37 +354,35 @@
             \label{fig:deep face recognition}
         \end{figure}
 
-    \subsection{Motion analysis}
-     
-    \subsection{Scene reconstruction}
-
 \section{Software frameworks}
-    Research in the fields of artificial intelligence requires the use of analytical tools, technologies, and languages to help extract insights and value from data, and after that build sustainable mathematical model.
-    The key advantages of using frameworks and libraries are the ability to quickly develop and test new ideas and run efficiently on \gls{gpu}.
+    Research in the fields of \gls{ai} requires the use of analytical tools, technologies, and languages to help extract insights and value from data, and after that build sustainable prediction model. The key advantages of using frameworks and libraries are the ability to quickly develop and test new ideas and run efficiently on \gls{gpu}s.
 
-    According to a 2017 survey of 16,000 data scientists by Kaggle revealed that scientists most rely on Python language \cite{mostuseddatasciencetools}. So there is no surprise that most of these packages are developed for that language. For this reason, we provide a quick overview of significant and common Python \gls{ml} frameworks.
+    According to a 2017 survey of 16,000 data scientists by Kaggle revealed that researches in  \gls{ai} most rely on Python language \cite{mostuseddatasciencetools}. So there is no surprise that most of these packages are developed for that language. For this reason, we provide a quick overview of significant and widespread Python \gls{ml} and \gls{cv} frameworks.
     
+    \subsection{OpenCV}
+        OpenCV \cite{opencv_library} is a popular, cross-platform, and open-source \gls{cv} and \gls{ml} library written in C/C++ language. It was originally sponsored by Intel but now driven mostly by the open-source community with more than 47 thousand people. It has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, extract 3D models of objects, stitch images together, etc. OpenCV is used extensively in companies, research groups, and governmental bodies. 
+        
     \subsection{TensorFlow}
-        TensorFlow is an open source software library for numerical computation using data flow graphs. The graph nodes represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) that flow between them. This flexible architecture enables users to deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device without rewriting code. TensorFlow also includes TensorBoard, a data visualization toolkit.
+        TensorFlow \cite{abadi2016tensorflow} is an open source software library for numerical computation using data flow graphs. The graph nodes represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) that flow between them. This flexible architecture enables users to deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device without rewriting code. TensorFlow also includes TensorBoard, a data visualization toolkit.
 
-        TensorFlow was originally developed by researchers and engineers working on the Google Brain team within Google's Machine Intelligence Research organization for the purposes of conducting machine learning and deep neural networks research. The system is general enough to be applicable in a wide variety of other domains, as well.
+        TensorFlow was originally developed by researchers and engineers working on the Google Brain team within Google's Machine Intelligence Research organization to conduct machine learning and deep neural networks research. The system is general enough to be applicable in a wide variety of other domains, as well.
 
-        TensorFlow provides stable Python and C APIs as well as non-guaranteed backwards compatible API's for C++, Go, Java, JavaScript, and Swift. \cite{abadi2016tensorflow}
+        TensorFlow provides stable Python and C APIs as well as non-guaranteed backward compatible API's for C++, Go, Java, JavaScript, and Swift. 
         
     \subsection{PyTorch}
-        PyTorch is an open source library designed to enable rapid research on machine learning models. It builds upon a few projects, most notably Lua Torch, Chainer, and HIPS Autograd, and provides a high-performance environment with easy access to automatic differentiation of models executed on different devices (CPU and GPU). To make prototyping easier, PyTorch does not follow the symbolic approach used in many other deep learning frameworks, but focuses on differentiation of purely imperative programs, with a focus on extensibility and low overhead. \cite{paszke2017automatic}
+        PyTorch \cite{paszke2017automatic} is an open source library designed to enable rapid research on machine learning models. It builds upon a few projects, most notably Lua Torch, Chainer, and HIPS Autograd, and provides a high-performance environment with easy access to automatic differentiation of models executed on different devices (CPU and GPU). To make prototyping easier, PyTorch does not follow the symbolic approach used in many other deep learning frameworks, but focuses on differentiation of purely imperative programs, with a focus on extensibility and low overhead. 
         
     \subsection{Caffe2}
-        Caffe2 aims to provide an easy and straightforward way for users to experiment with deep learning and leverage community contributions of new models and algorithms. Users can bring their creations to scale using the power of GPUs in the cloud or to the masses on mobile with Caffe2's cross-platform libraries. In May 2018, the development team decided to merge Caffe2 into PyTorch and make them a single package to enable a smooth transition from fast prototyping to fast execution. \cite{caffe2}
+        Caffe2 \cite{caffe2} aims to provide a smooth and straightforward way for users to experiment with deep learning and leverage community contributions of new models and algorithms. Users can bring their creations to scale using the power of GPUs in the cloud or to the masses on mobile with Caffe2's cross-platform libraries. In May 2018, the development team decided to merge Caffe2 into PyTorch and make them a single package to enable a smooth transition from fast prototyping to fast execution. 
         
     \subsection{Theano}
-        Theano is a Python library that allows to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Since its introduction in 2008, it has been one of the most used CPU and GPU mathematical compilers – especially in the machine learning community - and has shown steady performance improvements. However, the development team decided to stop further releases in 2017. \cite{2016arXiv160502688short}
+        Theano \cite{2016arXiv160502688short} is a Python library that allows defining, optimizing, and evaluating mathematical expressions involving multi-dimensional arrays efficiently. Since its introduction in 2008, it has been one of the most used CPU and GPU mathematical compilers – especially in the machine learning community - and has shown steady performance improvements. However, the development team decided to stop further releases in 2017. 
         
-\section{Evaluation metrics}
-    In this section, we provide a brief overview of common evaluation metrics relevant to the thesis topic.
+\section{Evaluation metrics} \label{evaluation-metrics}
+    In this section, we provide a brief overview of standard evaluation metrics relevant to the tracking field.
     
     \subsection{\Glsentryfull{iou}}
-        \Gls{iou}, also known as the Jaccard index, is an evaluation metric used as a similarity measure in object detection task. It measures ratio between predicted and ground-truth bounding box given by:
+        \Gls{iou}, also known as the Jaccard index, is an evaluation metric used as a similarity measure in any object detection task. It measures the ratio between predicted and ground-truth bounding box given by:
         
         \begin{equation}
             \text{IoU} = \frac{\text{Area of overlap}}{\text{Area of union}} 
@@ -346,11 +398,11 @@
         \end{figure}
         
     \subsection{\Glsentryfull{mota}}
-        The \gls{mota} is most widely used metric for evaluating a tracker's performance. It's main advantage is expressiveness as it combines three different sources of errors.
+        The \gls{mota} is the most widely used metric for evaluating a tracker's performance. Its main advantage is expressiveness as it combines three different sources of errors:
         
         \begin{itemize}
-            \item \textbf{\Gls{fp}} - The number of false positives (incorrect detections).
-            \item \textbf{\Gls{fn}} - The number of false negatives (missed detections).
+            \item \textbf{\Gls{fp}} - The number of incorrect detections.
+            \item \textbf{\Gls{fn}} - The number of missed detections.
             \item \textbf{\Gls{idsw}} - The number of identity switches.
         \end{itemize}
 
@@ -360,7 +412,7 @@
             \text{MOTA} = 1 - \frac{\sum_{t} \left( \text{FN}_t + \text{FP}_t + \text{IDSW}_t \right)}{\sum_{t}\text{GT}_t},
         \end{equation}
         
-        where $t$ is the frame index and GT is the number of ground-truth objects. The possible values are reported in the percentage from $(-\infty, 100]$. Negative values are possible when the number of errors made exceeds the number of all objects in sequence.
+        where $t$ is the frame index, and GT is the number of ground-truth objects. The possible values are reported in the percentage from $(-\infty, 100]$. Negative values are possible when the number of errors made exceeds the number of all objects in sequence.
     
     \subsection{\Glsentryfull{motp}} 
         The \gls{motp} represents the average dissimilarity between the ground-truth and the predicted bounding boxes. It is calculated as 
@@ -372,6 +424,4 @@
         where $c_t$ denotes the number of matches in frame $t$ and $d_t,i$ denotes the bounding box overlap of ground-truth and the predicted target. It thereby gives the average overlap between all correctly matched hypotheses and their respective objects and ranges between $t_d := 50\%$ and $100\%$. \cite{MOTChallenge2015}
     
     \subsection{\Glsentryfull{fps}} 
-        The \gls{fps} is common metric used in many fields to measure run-time performance of algorithms, animations, rendering, etc. In this context, it expresses the ability of algorithm to process and analyze a certain number of images per second. With increasing algorithm complexity, the frame rate decreases. Real-time ability in video sequence processing is assumed at 25 \gls{fps} \cite{MOTChallenge2015}.
-        
-    % \subsection{Mean average precision}
+        The \gls{fps} is a common metric used in many fields to measure the run-time performance of camera equipment, algorithms, animations, rendering, etc. In this context, it expresses the ability of an algorithm to process and analyze a certain number of images per second. With increasing algorithm complexity, the frame rate decreases. Real-time ability in video sequence processing is assumed at 25 \gls{fps} \cite{MOTChallenge2015}.

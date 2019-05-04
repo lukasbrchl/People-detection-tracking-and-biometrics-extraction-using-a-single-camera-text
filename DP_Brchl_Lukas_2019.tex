@@ -31,6 +31,7 @@
 \usepackage{float} %for H option in figures
 \usepackage{array} %table aligment       
 \usepackage{amsmath} %cases
+\usepackage{amssymb}
 \usepackage{svg} %svg
 \usepackage{scrextend}
 \usepackage{multirow}
@@ -52,9 +53,20 @@
 \authorWithDegrees{Bc. Luk{\' a}{\v s} Brchl} %author's name with academic degrees
 \author{Luk{\' a}{\v s} Brchl} %author's name without academic degrees
 \supervisor{doc. RNDr. Ing. Marcel Jiřina, Ph.D.}
-\acknowledgements{}
+\acknowledgements{First of all, I would like to thank my supervisor Assoc. Prof. Marcel Jiřina who gave rise to this assignment but also hired me to ImproLab, which was an unique opportunity to gain new professional knowledge. I have already spent more than two great years in this group doing work I enjoyed, which has dramatically shifted my thinking further.
+
+I also thank all my colleagues from ImproLab for creating a pleasant everyday working environment. Our regular team-building events had extremely positive repercussions on my work.
+
+I want to express my gratitude to my co-supervisor Prof. Kai-Lung Hua from Taiwan Tech, thanks to which I was able to work on this thesis in such a beautiful country like Taiwan is. I am also grateful for his course Deep Learning for Computer Vision Applications where I could revive my current knowledge of this field. It has been a fantastic experience, beneficial for my learning and my personal growth. I am also entirely determined to return to this lovely country in the future because of the kind and helpful people that can be found here.
+
+Many thanks to the wonderful research community that exists in machine learning and computer vision field. Without so many materials, frameworks, libraries, and open-source models, this work could not arise.
+
+I would also like to thank my family because, despite the challenging situations I faced during the studies, they have always supported my ideas and choices and provided me with lots of love.
+
+Last but not least, big thanks to my girlfriend Michaela, who has been tirelessly supporting me throughout the last four years and also making sure that I do not run out of food during the writing of this work.
+}
 \abstractCS{}
-\abstractEN{This thesis aims to design and implement a framework that analyzes video sequences to extract as much information as possible about the people in the scene captured by a single RGB camera. The whole framework can be broken down into the smaller components, i.e. people detector, people tracker. and biometrics extractor. The people detector employs a well-known deep-learning architecture to estimate bounding boxes of individuals. The tracking solution is built to be robust regarding the crowded scenes by incorporating multiple features in matching phase such as person's visual appearance, motion, face, and height. Each new detection has these features calculated by various computer vision algorithms and then these hypotheses are matched against existing tracks utilizing multiple distance metrics. Apart from using the features only for matching, they are kept for calculation of various output statistics. The approach is validated against the dataset which was created for this propose. The integration of face information in matching phase greatly improves the performance, however it is not always possible to extract it. This face information also helps to maintain a person identity even when when they leave the scene and then reappears. At the end, it is shown what the output statistics can be used for.}
+\abstractEN{This thesis aims to design and implement a framework that analyzes video sequences to extract as much information as possible about the people in the scene captured by a single RGB camera. The whole framework can be broken down into the smaller components, i.e. people detector, people tracker. and biometrics extractor. The people detector employs a well-known deep-learning architecture to estimate bounding boxes of individuals. The tracking solution is built to be robust regarding the crowded scenes by incorporating multiple features in matching phase such as person's visual appearance, motion, face, and height. Each new detection has these features calculated by various computer vision algorithms and then these hypotheses are matched against existing tracks utilizing multiple distance metrics. Apart from using the features only for matching, they are kept for calculation of various output statistics. The approach is validated against the dataset which was created for this propose. however it is not always possible to extract it.}
 \placeForDeclarationOfAuthenticity{} %where you have signed the declaration
 \keywordsCS{počítačové vidění, detekce osob, sledování osob, extrakce biometrických údajů}
 \keywordsEN{computer vision, people detection, people tracking, biometrics extraction}
@@ -63,6 +75,7 @@
 
 %introduction
 \newacronym{gpu}{GPU}{graphics processing unit}
+\newacronym{cpu}{CPU}{central processing unit}
 \newacronym{mot}{MOT}{multiple object tracking}
 \newacronym{mtmct}{MTMCT}{multi-target multi-camera tracking}
 \newacronym{reid}{ReID}{re-identification}
@@ -72,6 +85,8 @@
 \newacronym{pca}{PCA}{principal component analysis}
 \newacronym{dl}{DL}{deep learning}
 \newacronym{cv}{CV}{computer vision}
+\newacronym{rgb}{RGB}{red-green-blue}
+
 \newacronym{ann}{ANN}{artificial neural network}
 \newacronym{nn}{NN}{neural network}
 \newacronym{mlp}{MLP}{multi layer perceptron}
@@ -96,17 +111,33 @@
 \newacronym{idsw}{IDSW}{identity switches}
 \newacronym{motp}{MOTP}{multiple object tracking precision}
 
-%related work
+% related work
 \newacronym{mots}{MOTS}{multiple object tracking and segmentation}
 \newacronym{sort}{SORT}{simple online and real-time tracking}
 \newacronym{rnn}{RNN}{recurrent neural network}
 \newacronym{lstm}{LSTM}{long short-term memory}
+\newacronym{dex}{DEX}{Deep EXpectation}
+\newacronym{dsae}{DSAE}{deep sparse autoencoders}
+
+% design
+\newacronym{cmos}{CMOS}{complementary metal oxide semiconductor}
+\newacronym{improlab}{ImproLab}{Image Processing Laboratory}
+\newacronym{fit}{FIT}{Faculty of Information Technology}
+\newacronym{fce}{FCE}{Faculty of Civil Engineering}
+\newacronym{ctu}{CTU}{Czech Technical University}
+\newacronym{gige}{GigE}{Gigabit Ethernet}
+\newacronym{mp}{MP}{megapixel}
+\newacronym{sdk}{SDK}{software development kit}
+\newacronym{hsv}{HSV}{hue-saturation-value}
+\newacronym{ssr}{SSR-Net}{Soft Stagewise Regression Network}
+\newacronym{dlt}{DLT}{Direct Linear Transform}
+
 
 \begin{document}
     \input{src_text/00_introduction.tex}
     \input{src_text/01_theoretical_background.tex}
     \input{src_text/02_related_work.tex}
-    \input{src_text/03_design.tex}
+    \input{src_text/03_methodology.tex}
     \input{src_text/04_implementation.tex}
     \input{src_text/05_evaluation.tex}
     \input{src_text/06_conclusion.tex}
