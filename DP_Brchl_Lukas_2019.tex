@@ -37,6 +37,9 @@
 \usepackage{multirow}
 \addtokomafont{labelinglabel}{\sffamily}
 
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{Blue}{rgb}{0.30980, 0.50588, 0.73725}
+\definecolor{White}{rgb}{1, 1, 1}
 
 % list of acronyms
 \usepackage[acronym,nonumberlist,toc,nopostdot,numberedsection=autolabel,nomain]{glossaries}
@@ -53,11 +56,11 @@
 \authorWithDegrees{Bc. Luk{\' a}{\v s} Brchl} %author's name with academic degrees
 \author{Luk{\' a}{\v s} Brchl} %author's name without academic degrees
 \supervisor{doc. RNDr. Ing. Marcel Jiřina, Ph.D.}
-\acknowledgements{First of all, I would like to thank my supervisor Assoc. Prof. Marcel Jiřina who gave rise to this assignment but also hired me to ImproLab, which was an unique opportunity to gain new professional knowledge. I have already spent more than two great years in this group doing work I enjoyed, which has dramatically shifted my thinking further.
+\acknowledgements{First of all, I would like to thank my supervisor Assoc. Prof. Marcel Jiřina who gave rise to this assignment but also hired me to ImproLab, which was a unique opportunity to gain new professional knowledge. I have already spent more than two great years in this group doing work I enjoyed. This opportunity has dramatically shifted my thinking further.
 
-I also thank all my colleagues from ImproLab for creating a pleasant everyday working environment. Our regular team-building events had extremely positive repercussions on my work.
+I also thank all my colleagues from ImproLab for creating a pleasant everyday working environment. Our regular team-building events had extremely positive repercussions on my work. Specifically thanks to Ing. Jakub Novák for proofreading.
 
-I want to express my gratitude to my co-supervisor Prof. Kai-Lung Hua from Taiwan Tech, thanks to which I was able to work on this thesis in such a beautiful country like Taiwan is. I am also grateful for his course Deep Learning for Computer Vision Applications where I could revive my current knowledge of this field. It has been a fantastic experience, beneficial for my learning and my personal growth. I am also entirely determined to return to this lovely country in the future because of the kind and helpful people that can be found here.
+I want to express my gratitude to my co-supervisor Prof. Kai-Lung Hua from Taiwan Tech, thanks to which I was able to work on this thesis in such a beautiful country like Taiwan. I am also grateful for his course Deep Learning for Computer Vision Applications where I could revive my current knowledge of this field. The stay in Taiwan has been a fantastic experience, beneficial for my learning and my personal growth. I am also entirely determined to return to this lovely country in the future because of the kind and helpful people that can be found here.
 
 Many thanks to the wonderful research community that exists in machine learning and computer vision field. Without so many materials, frameworks, libraries, and open-source models, this work could not arise.
 
@@ -65,72 +68,69 @@ I would also like to thank my family because, despite the challenging situations
 
 Last but not least, big thanks to my girlfriend Michaela, who has been tirelessly supporting me throughout the last four years and also making sure that I do not run out of food during the writing of this work.
 }
-\abstractCS{}
-\abstractEN{This thesis aims to design and implement a framework that analyzes video sequences to extract as much information as possible about the people in the scene captured by a single RGB camera. The whole framework can be broken down into the smaller components, i.e. people detector, people tracker. and biometrics extractor. The people detector employs a well-known deep-learning architecture to estimate bounding boxes of individuals. The tracking solution is built to be robust regarding the crowded scenes by incorporating multiple features in matching phase such as person's visual appearance, motion, face, and height. Each new detection has these features calculated by various computer vision algorithms and then these hypotheses are matched against existing tracks utilizing multiple distance metrics. Apart from using the features only for matching, they are kept for calculation of various output statistics. The approach is validated against the dataset which was created for this propose. however it is not always possible to extract it.}
-\placeForDeclarationOfAuthenticity{} %where you have signed the declaration
-\keywordsCS{počítačové vidění, detekce osob, sledování osob, extrakce biometrických údajů}
+\abstractCS{Tato práce se zabývá návrhem frameworku, který slouží k analýze video sekvencí z RGB kamery. Framework využívá technik sledování osob a následné extrakce biometrických dat. Biometrická data jsou sbírána za účelem využití v malobochodním prostředí. Navržený framework lze rozdělit do třech menších komponent, tj. detektor osob, sledovač osob a extraktor biometrických dat. Navržený detektor osob využívá různé architektury sítí hlubokého učení k určení polohy osob. Řešení pro sledování osob se řídí známým postupem \uv{online tracking-by-detection} a je navrženo tak, aby bylo robustní vůči zalidněným scénám. Toho je dosaženo začleněním dvou metrik týkající se vzhledu a stavu objektu v asociační fázi. Kromě výpočtu těchto deskriptorů, jsme schopni získat další informace o jednotlivcích jako je věk, pohlaví, emoce, výška a trajektorie. Návržené řešení je ověřeno na datasetu, který je vytvořen speciálně pro tuto úlohu.}
+\abstractEN{This thesis proposes a framework that analyzes video sequences from a single RGB camera by extracting useful soft-biometric data about tracked people. The aim is to focus on data that could be utilized in a retail environment. The designed framework can be broken down into the smaller components, i.e., people detector, people tracker, and soft-biometrics extractor. The people detector employs various deep learning architectures that estimate bounding boxes of individuals. The tracking solution follows the well-known online tracking-by-detection approach, while the proposed solution is built to be robust regarding the crowded scenes by incorporating appearance and state features in the matching phase. Apart from calculating appearance descriptors only for matching, we extract additional information of each person in the form of age, gender, emotion, height, and trajectory when possible. The whole framework is validated against the dataset which was created for this propose.}
+\placeForDeclarationOfAuthenticity{Prague} %where you have signed the declaration
+\keywordsCS{počítačové vidění, detekce osob, sledování osob, extrakce biometrických údajů\newpage}
 \keywordsEN{computer vision, people detection, people tracking, biometrics extraction}
 \declarationOfAuthenticityOption{5} %select as appropriate, according to the desired license
 \website{https://github.com/lukasbrchl/People-detection-tracking-and-biometrics-extraction-using-a-single-camera-text} %optional URL (remove entirely if you have no URL for this thesis)
 
-%introduction
-\newacronym{gpu}{GPU}{graphics processing unit}
-\newacronym{cpu}{CPU}{central processing unit}
-\newacronym{mot}{MOT}{multiple object tracking}
-\newacronym{mtmct}{MTMCT}{multi-target multi-camera tracking}
-\newacronym{reid}{ReID}{re-identification}
-%theoretical backround
-\newacronym{ai}{AI}{artificial intelligence}
-\newacronym{ml}{ML}{machine learning}
-\newacronym{pca}{PCA}{principal component analysis}
-\newacronym{dl}{DL}{deep learning}
-\newacronym{cv}{CV}{computer vision}
-\newacronym{rgb}{RGB}{red-green-blue}
-
 \newacronym{ann}{ANN}{artificial neural network}
-\newacronym{nn}{NN}{neural network}
-\newacronym{mlp}{MLP}{multi layer perceptron}
+\newacronym{ai}{AI}{artificial intelligence}
+\newacronym{cmos}{CMOS}{complementary metal oxide semiconductor}
 \newacronym{cnn}{CNN}{convolutional neural network}
-\newacronym{svm}{SVM}{support vector machine}
-\newacronym{lbp}{LBP}{local binary pattern}
-\newacronym{hog}{HOG}{histogram of oriented gradients}
-\newacronym{sift}{SIFT}{Scale-invariant feature transform}
-\newacronym{surf}{SURF}{Speeded-Up Robust Features}
-\newacronym{r-cnn}{R-CNN}{region-based convolutional network}
+\newacronym{ctu}{CTU}{Czech Technical University}
+\newacronym{cpu}{CPU}{central processing unit}
+\newacronym{cv}{CV}{computer vision}
+\newacronym{dex}{DEX}{Deep EXpectation}
+\newacronym{dl}{DL}{deep learning}
+\newacronym{dlt}{DLT}{Direct Linear Transform}
+\newacronym{dsae}{DSAE}{deep sparse autoencoders}
 \newacronym{fast r-cnn}{Fast R-CNN}{fast region-based convolutional network}
 \newacronym{faster r-cnn}{Faster R-CNN}{faster region-based convolutional network}
-\newacronym{rpn}{RPN}{region proposal network}
-\newacronym{yolo}{YOLO}{you only look once}
-\newacronym{nms}{NMS}{non-maximum suppression}
-\newacronym{ssd}{SSD}{single-shot detector}
-\newacronym{fps}{FPS}{frames per second}
-\newacronym{iou}{IoU}{intersection over union}
-\newacronym{mota}{MOTA}{multiple object tracking accuracy}
-\newacronym{fp}{FP}{false positives}
-\newacronym{fn}{FN}{false negatives}
-\newacronym{idsw}{IDSW}{identity switches}
-\newacronym{motp}{MOTP}{multiple object tracking precision}
-
-% related work
-\newacronym{mots}{MOTS}{multiple object tracking and segmentation}
-\newacronym{sort}{SORT}{simple online and real-time tracking}
-\newacronym{rnn}{RNN}{recurrent neural network}
-\newacronym{lstm}{LSTM}{long short-term memory}
-\newacronym{dex}{DEX}{Deep EXpectation}
-\newacronym{dsae}{DSAE}{deep sparse autoencoders}
-
-% design
-\newacronym{cmos}{CMOS}{complementary metal oxide semiconductor}
-\newacronym{improlab}{ImproLab}{Image Processing Laboratory}
-\newacronym{fit}{FIT}{Faculty of Information Technology}
 \newacronym{fce}{FCE}{Faculty of Civil Engineering}
-\newacronym{ctu}{CTU}{Czech Technical University}
+\newacronym{fit}{FIT}{Faculty of Information Technology}
+\newacronym{fn}{FN}{false negatives}
+\newacronym{fp}{FP}{false positives}
+\newacronym{fps}{FPS}{frames per second}
 \newacronym{gige}{GigE}{Gigabit Ethernet}
-\newacronym{mp}{MP}{megapixel}
-\newacronym{sdk}{SDK}{software development kit}
+\newacronym{gpu}{GPU}{graphics processing unit}
+\newacronym{hog}{HOG}{histogram of oriented gradients}
 \newacronym{hsv}{HSV}{hue-saturation-value}
+\newacronym{idsw}{IDSW}{identity switches}
+\newacronym{improlab}{ImproLab}{Image Processing Laboratory}
+\newacronym{iou}{IoU}{intersection over union}
+\newacronym{lbp}{LBP}{local binary pattern}
+\newacronym{lstm}{LSTM}{long short-term memory}
+\newacronym{mae}{MAE}{mean absolute error}
+\newacronym{ml}{ML}{machine learning}
+\newacronym{mlp}{MLP}{multi layer perceptron}
+\newacronym{mot}{MOT}{multiple object tracking}
+\newacronym{mota}{MOTA}{multiple object tracking accuracy}
+\newacronym{motp}{MOTP}{multiple object tracking precision}
+\newacronym{mots}{MOTS}{multiple object tracking and segmentation}
+\newacronym{mp}{MP}{megapixel}
+\newacronym{mtmct}{MTMCT}{multi-target multi-camera tracking}
+\newacronym{nms}{NMS}{non-maximum suppression}
+\newacronym{nn}{NN}{neural network}
+\newacronym{pca}{PCA}{principal component analysis}
+\newacronym{r-cnn}{R-CNN}{region-based convolutional network}
+\newacronym{reid}{ReID}{re-identification}
+\newacronym{rgb}{RGB}{red-green-blue}
+\newacronym{roi}{RoI}{region of interest}
+\newacronym{rmse}{RMSE}{root-mean-square error}
+\newacronym{rnn}{RNN}{recurrent neural network}
+\newacronym{rpn}{RPN}{region proposal network}
+\newacronym{sdk}{SDK}{software development kit}
+\newacronym{sift}{SIFT}{Scale-invariant feature transform}
+\newacronym{sort}{SORT}{simple online and real-time tracking}
+\newacronym{ssd}{SSD}{single-shot detector}
 \newacronym{ssr}{SSR-Net}{Soft Stagewise Regression Network}
-\newacronym{dlt}{DLT}{Direct Linear Transform}
+\newacronym{surf}{SURF}{Speeded-Up Robust Features}
+\newacronym{spp}{SPP}{spatial pyramid pooling}
+\newacronym{svm}{SVM}{support vector machine}
+\newacronym{yolo}{YOLO}{you only look once}
 
 
 \begin{document}
@@ -154,26 +154,22 @@ Last but not least, big thanks to my girlfriend Michaela, who has been tirelessl
     % media contents
     \chapter{Media contents}\label{app:CDcontent}
     \begin{figure}
-    % 	\dirtree{%
-    % 		.1 readme.txt\DTcomment{the file with CD contents description}.
-    % 		.1 data\DTcomment{the data files directory}.
-    % 		.2 graphs\DTcomment{the directory of graphs of experiments}.
-    % 		.3 *.eps\DTcomment{the B/W graphs}.
-    % 		.3 *.png\DTcomment{the color graphs}.
-    % 		.3 *.dat\DTcomment{the graphs data files}.
-    % 		.1 exe\DTcomment{the directory with executable WBDCM program}.
-    % 		.2 wbdcm\DTcomment{the WBDCM program executable (UNIX)}.
-    % 		.2 wbdcm.exe\DTcomment{the WBDCM program executable (Windows)}.
-    % 		.1 src\DTcomment{the directory of source codes}.
-    % 		.2 wbdcm\DTcomment{the directory of WBDCM program}.
-    % 		.3 Makefile\DTcomment{the makefile of WBDCM program (UNIX)}.
-    % 		.2 thesis\DTcomment{the directory of \LaTeX{} source codes of the thesis}.
-    % 		.3 figures\DTcomment{the thesis figures directory}.
-    % 		.3 *.tex\DTcomment{the \LaTeX{} source code files of the thesis}.
-    % 		.1 text\DTcomment{the thesis text directory}.
-    % 		.2 thesis.pdf\DTcomment{the Diploma thesis in PDF format}.
-    % 		.2 thesis.ps\DTcomment{the Diploma thesis in PS format}.
-    % 	}
+    	\dirtree{%
+    		.1 readme.txt\DTcomment{the file with CD contents description}.
+    		.1 data\DTcomment{the data files directory}.
+    		.2 example\textunderscore sequence\DTcomment{the directory with example sequence from dataset}.
+    		.3 *.jpg\DTcomment{the example images}.
+    		.2 example\textunderscore sequence\textunderscore graphs\DTcomment{the directory of graphs of experiments}.
+    		.3 *.png\DTcomment{the motion output graphs}.
+    		.2 tracking\textunderscore example.mp4\DTcomment{the example video file}.
+    		.1 src\DTcomment{the directory of source codes}.
+    		.2 models\DTcomment{the directory of deep learning modules}.
+    		.2 utils\DTcomment{the directory of helper modules}.
+    		.2 *.py\DTcomment{the Python source files}.
+    		.1 text\DTcomment{the thesis text directory}.
+    		.2 thesis\DTcomment{the directory of \LaTeX{} source codes of the thesis}.
+    		.2 thesis.pdf\DTcomment{the Diploma thesis in PDF format}.
+    	}
     \end{figure}
     
 
